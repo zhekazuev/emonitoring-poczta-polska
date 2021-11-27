@@ -5,7 +5,7 @@ Redisign for emonitoring.poczta-polska.pl
 
 Redisign for poczta-polska.pl and emonitoring.poczta-polska.pl
 
-Curent Stack on emonitoring.poczta-polska.pl:
+Curent Stack:
 - Bootstrap
 - PHP/WordPress
 - MySQL
@@ -24,22 +24,22 @@ curl --location --request POST 'https://uss.poczta-polska.pl/uss/v1.0/tracking/c
 --header 'Host:  uss.poczta-polska.pl' \
 --header 'Accept-Language:  en-gb' \
 --header 'Cookie: TS0...=' \
---data-raw '{"language":"PL","number":"CP...PL","addPostOfficeInfo":true}'
+--data-raw '{"language":"PL","number":"CP00000000PL","addPostOfficeInfo":true}'
 ```
 Response
 ```json
 {
     "mailInfo": {
-        "number": "CP...PL",
+        "number": "CP00000000PL",
         "dispatchDate": "2021-11-04T00:00:00",
         "dispatchCountryCode": "PL",
-        "dispatchCountryName": "Polska",
+        "dispatchCountryName": "Poland",
         "dispatchPostOffice": {
-            "code": "...",
-            "name": "UP ...",
+            "code": "000000",
+            "name": "UP Warszawa 1",
             "description": {
-                "longitude": 0.0,
-                "latitude": 0.0,
+                "longitude": 0,
+                "latitude": 0,
                 "openingHours": {
                     "businessDays": [
                         {
@@ -55,22 +55,22 @@ Response
             }
         },
         "recipientCountryCode": "BY",
-        "recipientCountryName": "Białoruś",
+        "recipientCountryName": "Belarus",
         "typeOfMailCode": "P",
-        "typeOfMailName": "Paczka pocztowa ekonomiczna",
+        "typeOfMailName": "Economical postal parcel",
         "weight": 2.01,
         "finished": true,
         "events": [
             {
                 "code": "P_NAD",
-                "name": "Nadanie",
+                "name": "Posted",
                 "time": "2021-11-04T19:05:00",
                 "postOffice": {
-                    "code": "...",
-                    "name": "UP ...",
+                    "code": "000000",
+                    "name": "UP Warszawa 1",
                     "description": {
-                        "longitude": 0.0,
-                        "latitude": 0.0,
+                        "longitude": 0,
+                        "latitude": 0,
                         "openingHours": {
                             "businessDays": [
                                 {
@@ -90,14 +90,14 @@ Response
             },
             {
                 "code": "P_WZL",
-                "name": "Wysłanie przesyłki",
+                "name": "Package sent ",
                 "time": "2021-11-04T20:05:00",
                 "postOffice": {
-                    "code": "...",
-                    "name": "UP ...",
+                    "code": "000000",
+                    "name": "UP Warszawa 1",
                     "description": {
-                        "longitude": 0.0,
-                        "latitude": 0.0,
+                        "longitude": 0,
+                        "latitude": 0,
                         "openingHours": {
                             "businessDays": [
                                 {
@@ -117,29 +117,29 @@ Response
             },
             {
                 "code": "P_PZL",
-                "name": "Nadejście",
+                "name": "Item arrived",
                 "time": "2021-11-04T22:07:00",
                 "postOffice": {
-                    "name": "Terminal Przeładunkowy"
+                    "name": "Transshipment"
                 },
                 "finished": false,
                 "canceled": false
             },
             {
                 "code": "P_WYPL",
-                "name": "Wysłano z Polski",
+                "name": "Sent from Poland",
                 "time": "2021-11-08T14:18:00",
                 "postOffice": {
-                    "code": "...",
+                    "code": "000000",
                     "name": "WER Warszawa",
                     "description": {
                         "longitude": 21.001944,
                         "latitude": 52.160055,
                         "openingHours": {},
                         "city": "Warszawa",
-                        "houseNumber": "8",
-                        "zipCode": "00-900",
-                        "street": "ul. Łączyny"
+                        "houseNumber": "1",
+                        "zipCode": "00-000",
+                        "street": "ul. Test 2"
                     }
                 },
                 "finished": false,
@@ -147,23 +147,23 @@ Response
             },
             {
                 "code": "P_WZL",
-                "name": "Wysłanie przesyłki",
+                "name": "Package sent ",
                 "time": "2021-11-11T10:19:00",
                 "postOffice": {
-                    "name": "Terminal Przeładunkowy"
+                    "name": "Transshipment"
                 },
                 "finished": false,
                 "canceled": false
             },
             {
                 "code": "P_WEOC",
-                "name": "Przyjęto w kraju przeznaczenia",
+                "name": "Accepted in the destination country",
                 "time": "2021-11-13T13:27:00",
                 "postOffice": {
-                    "name": "MINSK ...",
+                    "name": "MINSK PI 0",
                     "description": {
-                        "longitude": 0.0,
-                        "latitude": 0.0,
+                        "longitude": 0,
+                        "latitude": 0,
                         "openingHours": {}
                     }
                 },
@@ -172,13 +172,13 @@ Response
             },
             {
                 "code": "P_ZPUCPP",
-                "name": "Etap przed zgłoszeniem celnym",
+                "name": "Pre-customs declaration stage",
                 "time": "2021-11-13T13:33:00",
                 "postOffice": {
-                    "name": "MINSK ...",
+                    "name": "MINSK PI 0",
                     "description": {
-                        "longitude": 0.0,
-                        "latitude": 0.0,
+                        "longitude": 0,
+                        "latitude": 0,
                         "openingHours": {}
                     }
                 },
@@ -187,13 +187,13 @@ Response
             },
             {
                 "code": "P_WZL",
-                "name": "Wysłanie przesyłki",
+                "name": "Package sent ",
                 "time": "2021-11-14T14:54:00",
                 "postOffice": {
-                    "name": "MINSK ...",
+                    "name": "MINSK PI 0",
                     "description": {
-                        "longitude": 0.0,
-                        "latitude": 0.0,
+                        "longitude": 0,
+                        "latitude": 0,
                         "openingHours": {}
                     }
                 },
@@ -202,7 +202,7 @@ Response
             },
             {
                 "code": "P_RUD",
-                "name": "Zarejestrowano",
+                "name": "Item arrived",
                 "time": "2021-11-14T17:45:00",
                 "postOffice": {
                     "name": "International Postal System"
@@ -212,11 +212,11 @@ Response
             },
             {
                 "code": "P_NDPJ",
-                "name": "Próba doręczenia",
+                "name": "Missed delivery",
                 "time": "2021-11-14T20:13:00",
                 "cause": {
                     "code": "P_ND_Z",
-                    "name": "Adresat nieobecny / zamknięta siedziba adresata"
+                    "name": "Addressee not present / addressee's registered office closed"
                 },
                 "postOffice": {
                     "name": "International Postal System"
@@ -226,7 +226,7 @@ Response
             },
             {
                 "code": "P_D",
-                "name": "Doręczono",
+                "name": "Item delivered",
                 "time": "2021-11-16T18:17:00",
                 "postOffice": {
                     "name": "International Postal System"
@@ -236,7 +236,7 @@ Response
             }
         ]
     },
-    "number": "CP263297245PL",
+    "number": "CP00000000PL",
     "mailStatus": 0
 }
 ```
@@ -250,14 +250,13 @@ For example, make a list of movements in the form of a timeline, and not a list,
 - [Fedex](https://www.fedex.com/en-us/home.html)
 
 There are recommendations for site structure and button placement are described here - cool modern design code.
-- [EMS – Russian Post](https://www.pochta.ru/emspost/)
-- [Russian Post](https://www.pochta.ru/tracking)
-- [Belarussian Post](https://belpost.by/Otsleditotpravleniye)
+- [EMS – курьерская служба. Почты России](https://www.pochta.ru/emspost/)
+- [Почта России](https://www.pochta.ru/tracking)
+- [БелПочта](https://belpost.by/Otsleditotpravleniye)
+- [Pocztex Tracking](https://www.pocztex.pl/track-shipment/)
 
 Here are examples: the current normal design code poczta-polskа.pl, color scheme (white, red, yellow-gold - the national colors of Poland).
 - [e-Doręczenie](https://edoreczenia.poczta-polska.pl)
 - [Odbiorwpunkcie](https://odbiorwpunkcie.poczta-polska.pl/en/)
-
-And also state sites with a similar color scheme, but a more pleasant design code - blue was also used to highlight the important, the amount of red was reduced to make clearer accents and yellow was added in small quantities.
 - [Uzyskaj adres do e-Doręczeń u publicznego dostawcy usługi](https://www.gov.pl/web/gov/uzyskaj-adres-do-e-doreczen-u-publicznego-dostawcy-uslugi-e-doreczen)
 - [e-Doręczenia dla przedsiębiorców](https://www.biznes.gov.pl/pl/portal/03176)
