@@ -36,6 +36,12 @@
     border-color: #D31C14;
 }
 
+@media (min-width: 768px) {
+    .search-input {
+      width: 75%;
+    }
+  }
+
 /* :root {
     --overlay-color-1: #D31C14;
     --overlay-color-2: #FBDA5E;
