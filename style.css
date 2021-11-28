@@ -2,7 +2,6 @@
     background: linear-gradient(45deg, #D31C14, #FBDA5E, #D6715A);
     background-size: 1000% 1000%;
     animation: gradient 10s ease infinite;
-    height: 20vh;
 }
   
 @keyframes gradient {
@@ -21,6 +20,21 @@
     border: 5px solid;
     border-image-slice: 1;
     border-image-source: linear-gradient(to left, #D31C14, #FBDA5E);
+}
+
+ /* poland red button */
+ .btn-poland-red {
+    background-color: #FFF;
+    color: #D31C14;
+    border-color: #D31C14;
+    border-radius: 25px;
+}
+.btn-poland-red:hover,
+.btn-poland-red:focus,
+.btn-poland-red:active {
+    background-color: #D31C14;
+    color: #FFF;
+    border-color: #D31C14;
 }
 
 /* :root {
