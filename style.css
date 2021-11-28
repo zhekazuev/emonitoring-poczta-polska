@@ -1,0 +1,58 @@
+.gradient {
+    background: linear-gradient(45deg, #D31C14, #FBDA5E, #D6715A);
+    background-size: 1000% 1000%;
+    animation: gradient 10s ease infinite;
+    height: 20vh;
+}
+  
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+
+.border-gradient {
+    border: 5px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #D31C14, #FBDA5E);
+}
+
+/* :root {
+    --overlay-color-1: #D31C14;
+    --overlay-color-2: #FBDA5E;
+    --anim-duration: 2s;
+}
+
+#gradient {
+    opacity: 0.8;
+    background: none;
+}
+
+#gradient:after,
+#gradient:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+}
+
+#gradient:before {
+    background: linear-gradient(135deg, var(--overlay-color-2) 0%, var(--overlay-color-1) 100%);
+    animation: OpacityAnim var(--anim-duration) ease-in-out 0s infinite alternate;
+}
+
+#gradient:after {
+    background: linear-gradient(135deg, var(--overlay-color-1) 0%, var(--overlay-color-2) 100%);
+    animation: OpacityAnim var(--anim-duration) ease-in-out calc(-1 * var(--anim-duration)) infinite alternate;
+}
+
+@keyframes OpacityAnim {
+    0%{opacity: 1.0}
+    100%{opacity: 0.0}
+} */
