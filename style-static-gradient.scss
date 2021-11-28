@@ -1,0 +1,30 @@
+$t: transparent;
+$n: 5; // # of sections
+
+section {
+  height: 100%;
+  position: absolute;
+  width: calc(100% / #{$n});
+  @for $i from 1 through $n {
+    &:nth-of-type(#{$i}) {
+      left: calc((100% / #{$n}) * #{$i - 1});
+    }
+  }
+}
+
+
+.bg-1 {
+  background: linear-gradient(135deg, #85C9C8, #D4FEE6, #E5FDC9);
+}
+.bg-2 {
+  background: linear-gradient(to bottom, #C1EBE1, #93B4AC);
+}
+.bg-3 {
+  background: -webkit-radial-gradient(top left, ellipse, #FDE152 0%, $t), linear-gradient(to bottom, #FA715F, #FA715F 60%, #DB1174, #9B4CA7); 
+}
+.bg-4 {
+  background: linear-gradient(5deg, #556270, #C44D58);
+}
+.bg-5 {
+  background: linear-gradient(5deg, #036564, #033649);
+}
