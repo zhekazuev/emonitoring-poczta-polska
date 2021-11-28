@@ -11,7 +11,13 @@ Curent Stack:
 - MySQL
 - Google Font API
 
-How it works:
+## Pallete and Design:
+
+<img src="references/post_simle.jpg" alt="Post Logo"/>
+<img src="references/adobecolor_color_post_simle.jpeg" alt="Pallete"/>
+
+## How it works:
+
 Request
 ```bash
 curl --location --request POST 'https://uss.poczta-polska.pl/uss/v1.0/tracking/checkmailex' \
