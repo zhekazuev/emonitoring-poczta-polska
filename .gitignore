@@ -18,4 +18,17 @@ ENV/
 env.bak/
 venv.bak/
 
+# Development
 .vscode
+
+# Bootstrap
+bootstrap
+
+# SCSS and SASS 
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+# mac
+.DS_Store
