@@ -1,0 +1,11 @@
+@import "variables";
+@import "functions";
+@import "mixins/breakpoints";
+@import "mixins/container";
+@import "mixins/grid";
+
+.container {
+  @include make-container();
+  max-width: 1340px;
+}
+
