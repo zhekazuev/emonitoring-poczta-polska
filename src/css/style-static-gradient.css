@@ -1,0 +1,47 @@
+section {
+  height: 100%;
+  position: absolute;
+  width: calc(100% / 5);
+}
+
+section:nth-of-type(1) {
+  left: calc((100% / 5) * 0);
+}
+
+section:nth-of-type(2) {
+  left: calc((100% / 5) * 1);
+}
+
+section:nth-of-type(3) {
+  left: calc((100% / 5) * 2);
+}
+
+section:nth-of-type(4) {
+  left: calc((100% / 5) * 3);
+}
+
+section:nth-of-type(5) {
+  left: calc((100% / 5) * 4);
+}
+
+.bg-1 {
+  background: linear-gradient(135deg, #85C9C8, #D4FEE6, #E5FDC9);
+}
+
+.bg-2 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#C1EBE1), to(#93B4AC));
+  background: linear-gradient(to bottom, #C1EBE1, #93B4AC);
+}
+
+.bg-3 {
+  background: -webkit-radial-gradient(top left, ellipse, #FDE152 0%, transparent), -webkit-gradient(linear, left top, left bottom, from(#FA715F), color-stop(60%, #FA715F), color-stop(#DB1174), to(#9B4CA7));
+  background: -webkit-radial-gradient(top left, ellipse, #FDE152 0%, transparent), linear-gradient(to bottom, #FA715F, #FA715F 60%, #DB1174, #9B4CA7);
+}
+
+.bg-4 {
+  background: linear-gradient(5deg, #556270, #C44D58);
+}
+
+.bg-5 {
+  background: linear-gradient(5deg, #036564, #033649);
+}
