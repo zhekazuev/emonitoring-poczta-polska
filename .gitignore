@@ -29,6 +29,8 @@ bootstrap
 *.css.map
 *.sass.map
 *.scss.map
+*.min.js
+*.min.css
 
 # mac
 .DS_Store
