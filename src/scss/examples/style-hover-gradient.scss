@@ -1,4 +1,4 @@
-body {
+.gradient {
     // font-family: 'Segoe UI', 'San Francisco', Calibri, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -10,9 +10,9 @@ body {
   
   .c-preview {
     background: #000;
-    background: -moz-linear-gradient(45deg, #000000 0%, #000000 25%, #FBDA5E 50%, #D6715A 75%, #D31C14 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #000000 0%, #000000 25%, #FBDA5E 50%, #D6715A 75%, #D31C14 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #000000 0%, #000000 25%, #FBDA5E 50%, #D6715A 75%, #D31C14 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // background: -moz-linear-gradient(45deg, #000000 0%, #000000 25%, #FBDA5E 50%, #D6715A 75%, #D31C14 100%); /* FF3.6-15 */
+    // background: -webkit-linear-gradient(45deg, #000000 0%, #000000 25%, #FBDA5E 50%, #D6715A 75%, #D31C14 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #000000 0%, #000000 25%, #FBDA5E 50%, #D6715A 75%, #D31C14 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     background-size: 10000% 10000%;
     background-repeat: no-repeat;
     display: flex;
@@ -40,5 +40,11 @@ body {
       &__title {
         text-shadow: 0 0 20px rgba(0,0,0,1);
       }
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .search-input {
+      width: 75%;
     }
   }
