@@ -31,6 +31,8 @@ bootstrap
 *.scss.map
 *.min.js
 *.min.css
+!ghpages/*/*.min.css
+!ghpages/*/*.min.js
 
 # mac
 .DS_Store
