@@ -1,11 +1,11 @@
-@import "variables";
-@import "functions";
-@import "mixins/breakpoints";
-@import "mixins/container";
-@import "mixins/grid";
+@import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins/breakpoints";
+@import "../bootstrap/scss/mixins/container";
+@import "../bootstrap/scss/mixins/grid";
 
 .container {
-  @include make-container();
-  max-width: 1340px;
+    @include make-container();   
 }
+
 
