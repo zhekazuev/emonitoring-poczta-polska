@@ -9,8 +9,14 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest    
     steps:
+
+    # Any prerequisite steps
     - uses: actions/checkout@master
 
+    - name: Copy content to subdirectory
+      run: mkdir /tmp/pages && cp --recursive /src/static /tmp/pages && mv /tmp/pages ./pages
+
+    # Deploy to local repo
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
       env:
