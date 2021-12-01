@@ -1,0 +1,14 @@
+// poland red button - with colors from Poland Post
+.btn-poland-red {
+    background-color: #FFF;
+    color: #D31C14;
+    border-color: #D31C14;
+}
+// button movements
+.btn-poland-red:hover,
+.btn-poland-red:focus,
+.btn-poland-red:active {
+    background-color: #D31C14;
+    color: #FFF;
+    border-color: #D31C14;
+}

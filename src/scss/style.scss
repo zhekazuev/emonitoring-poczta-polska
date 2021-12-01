@@ -1,11 +1,27 @@
-@import "../bootstrap/scss/functions";
-@import "../bootstrap/scss/variables";
-@import "../bootstrap/scss/mixins/breakpoints";
-@import "../bootstrap/scss/mixins/container";
-@import "../bootstrap/scss/mixins/grid";
+// // bootstrap
+// @import "../bootstrap/scss/functions";
+// @import "../bootstrap/scss/variables";
+// @import "../bootstrap/scss/mixins/breakpoints";
+// @import "../bootstrap/scss/mixins/container";
+// @import "../bootstrap/scss/mixins/grid";
 
-.container {
-    @include make-container();   
-}
+// gradients
+@import "gradients";
 
+// animations
+@import "animations";
 
+// animations
+@import "buttons";
+
+// modification for search panel
+@media (min-width: 768px) {
+    .search-input {
+      width: 75%;
+    }
+}  
+
+// container test
+// .container {
+//     @include make-container();   
+// }

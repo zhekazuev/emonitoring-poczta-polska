@@ -1,0 +1,48 @@
+// background gradient with animation
+.gradient {
+    background: linear-gradient(45deg, #D31C14, #D6715A, #ffc905);
+    background-size: 1000% 1000%;
+    -webkit-animation: Animation 5s ease-in-out infinite;
+    -moz-animation: Animation 5s ease-in-out infinite;
+    animation: Animation 5s ease-in-out infinite;
+}
+@-webkit-keyframes Animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+@-moz-keyframes Animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes Animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+// borders with gradient
+.border-gradient {
+    border: 5px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, #D31C14, #FBDA5E);
+}
