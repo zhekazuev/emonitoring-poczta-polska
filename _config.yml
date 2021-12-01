@@ -10,3 +10,4 @@ exclude:
 include:
   - README.md
   - LICENSE
+permalink: /readme/
