@@ -23,14 +23,20 @@ jobs:
       run: |
         ls ${{ github.workspace }} && tree ./pages
 
-    # Push git subdirectory to gh-pages branch
-    - name: Deploy
-      uses: s0/git-publish-subdir-action@develop
-      env:
-        REPO: git@github.com:${{ github.repository }}.git
-        BRANCH: gh-pages
-        FOLDER: pages
-        GITHUB_TOKEN: ${{ secrets.GHPAGES_TOKEN }}
-        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: pages # The folder the action should deploy.
 
-    - run: echo "🍏 This job's status is ${{ job.status }}."
+    # # Push git subdirectory to gh-pages branch
+    # - name: Deploy
+    #   uses: s0/git-publish-subdir-action@develop
+    #   env:
+    #     REPO: git@github.com:${{ github.repository }}.git
+    #     BRANCH: gh-pages
+    #     FOLDER: pages
+    #     GITHUB_TOKEN: ${{ secrets.GHPAGES_TOKEN }}
+    #     SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+
+    # - run: echo "🍏 This job's status is ${{ job.status }}."
