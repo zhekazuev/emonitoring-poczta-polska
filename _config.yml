@@ -5,3 +5,14 @@ branch: "gh-pages" #  use "master" for user page or "gh-pages" for project pages
 exclude:
   - .gitignore
 paginate_path: "/about/page:num/"
+
+navbar-links:
+  About Me: "https://zhekazuev.github.io"
+  Resources:
+    - New Design: "https://zhekazuev.github.io/emonitoring-poczta-polska/"
+  Author's home: "https://github.com/zhekazuev"
+
+social-network-links:
+  email: "zhekazuev@gmail.com"
+  github: zhekazuev
+  linkedin: eugene-zuev
