@@ -21,7 +21,7 @@ jobs:
         mkdir -p /tmp/pages/about/references
         cp --recursive ./src/static/* /tmp/pages
         cp ./README.md /tmp/pages/about
-        cp --recursive ./references/* /tmp/pages/about
+        cp --recursive ./references/* /tmp/pages/about/references
         mv /tmp/pages ./pages
 
     - name: List files in the repository
