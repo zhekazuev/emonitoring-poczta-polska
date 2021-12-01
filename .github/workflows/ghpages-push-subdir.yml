@@ -31,6 +31,6 @@ jobs:
         BRANCH: gh-pages
         FOLDER: pages
         GITHUB_TOKEN: ${{ secrets.GHPAGES_TOKEN }}
-        #SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
 
     - run: echo "🍏 This job's status is ${{ job.status }}."
