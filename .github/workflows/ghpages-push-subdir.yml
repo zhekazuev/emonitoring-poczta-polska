@@ -14,7 +14,7 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Copy content to subdirectory
-      run: mkdir /tmp/pages && cp --recursive /src/static /tmp/pages && mv /tmp/pages ./pages
+      run: mkdir /tmp/pages && cp --recursive ./src/static /tmp/pages && mv /tmp/pages ./pages
 
     # Deploy to local repo
     - name: Deploy
