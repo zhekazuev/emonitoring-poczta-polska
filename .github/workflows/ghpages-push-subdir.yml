@@ -16,16 +16,16 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@master
 
-    - name: Move files into ./pages and check file
-      run: mkdir /tmp/pages && cp --recursive ./src/static/* /tmp/pages && mv /tmp/pages ./pages
+    # - name: Move files into ./pages and check file
+    #   run: mkdir /tmp/pages && cp --recursive ./src/static/* /tmp/pages && mv /tmp/pages ./pages
 
     - name: List files in the repository
-      run: tree ./pages
+      run: tree ./src/static
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with:
         branch: gh-pages # The branch the action should deploy to.
-        folder: ./pages # The folder the action should deploy.
+        folder: ./src/static # The folder the action should deploy.
 
     - run: echo "🍏 This job's status is ${{ job.status }}."
