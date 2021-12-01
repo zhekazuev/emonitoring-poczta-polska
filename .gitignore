@@ -18,21 +18,13 @@ ENV/
 env.bak/
 venv.bak/
 
-# Development
-.vscode
-
-# Bootstrap
-bootstrap
+# node_modules and bootstrap 
+node_modules
 
 # SCSS and SASS 
-.sass-cache/
+.sass-cache
 *.css.map
 *.sass.map
 *.scss.map
 *.min.js
 *.min.css
-!ghpages/*/*.min.css
-!ghpages/*/*.min.js
-
-# mac
-.DS_Store
