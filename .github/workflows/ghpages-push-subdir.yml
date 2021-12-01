@@ -25,8 +25,8 @@ jobs:
       run: mkdir /tmp/pages && cp --recursive ./src/static/* /tmp/pages && mv /tmp/pages ./pages
 
     - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }} && tree ./pages
+      run: |
+        ls ${{ github.workspace }} && tree ./pages
 
     # Push git subdirectory to gh-pages branch
     - name: Deploy
