@@ -1,1 +1,12 @@
+title: My Website
+author: Eugene Zuev
 theme: jekyll-theme-cayman
+exclude:
+  - .idea/
+  - .gitignore
+  - src
+  - .github
+# these are the files and directories that jekyll will exclude from the build
+include:
+  - README.md
+  - LICENSE
