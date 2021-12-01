@@ -33,10 +33,10 @@ jobs:
       uses: s0/git-publish-subdir-action@develop
       env:
         #REPO: git@github.com:zhekazuev/emonitoring-poczta-polska.git
-        REPO: ${{ github.event.repository.name }}
+        REPO: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY
         BRANCH: gh-pages
         FOLDER: pages
-        GITHUB_TOKEN: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY
+        GITHUB_TOKEN: ${{ secrets.GHPAGES_TOKEN }}
         #SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
 
     - run: echo "🍏 This job's status is ${{ job.status }}."
