@@ -1,0 +1,12 @@
+title: My Website
+author: Eugene Zuev
+theme: jekyll-theme-cayman
+branch: "gh-pages" #  use "master" for user page or "gh-pages" for project pages
+exclude:
+  - .gitignore
+  - references
+# these are the files and directories that jekyll will exclude from the build
+include:
+  - README.md
+  - LICENSE
+paginate_path: "/about/page:num/"
