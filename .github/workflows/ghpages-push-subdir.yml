@@ -18,7 +18,7 @@ jobs:
 
     - name: Copy files into ./pages
       run: |
-        mkdir /tmp/pages
+        mkdir -p /tmp/pages/about/references
         cp --recursive ./src/static/* /tmp/pages
         cp ./README.md /tmp/pages/about
         cp --recursive ./references/* /tmp/pages/about
