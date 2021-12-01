@@ -1,4 +1,4 @@
-Redisign for emonitoring.poczta-polska.pl
+[Redisign for emonitoring.poczta-polska.pl](https://zhekazuev.github.io/emonitoring-poczta-polska/)
 # Emonitoring Poczta Polska
 
 ## About
@@ -13,8 +13,8 @@ Curent Stack:
 
 ## Pallete and Design:
 
-<img src="references/post_simle.jpg" alt="Post Logo"/>
-<img src="references/adobecolor_color_post_simle.jpeg" alt="Pallete"/>
+<img src="./references/post_simle.jpg" alt="Post Logo"/>
+<img src="./references/adobecolor_color_post_simle.jpeg" alt="Pallete"/>
 
 ## How it works:
 
