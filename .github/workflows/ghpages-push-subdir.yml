@@ -16,27 +16,17 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@master
 
-    - name: Move files into ./pages and check file
-      run: mkdir /tmp/pages && cp --recursive ./src/static/* /tmp/pages && mv /tmp/pages ./pages
+    # - name: Move files into ./pages and check file
+    #   run: mkdir /tmp/pages && cp --recursive ./src/static/* /tmp/pages && mv /tmp/pages ./pages
 
     - name: List files in the repository
-      run: |
-        ls ${{ github.workspace }} && tree ./pages
+      run: tree ./src/static
 
     - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.1.7
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: pages # The folder the action should deploy.
+        github_token: ${{ secrets.GHPAGES_TOKEN }}
+        publish_branch: your-branch # The branch the action should deploy to.
+        publish_dir: ./src/static # The folder the action should deploy.
 
-    # # Push git subdirectory to gh-pages branch
-    # - name: Deploy
-    #   uses: s0/git-publish-subdir-action@develop
-    #   env:
-    #     REPO: git@github.com:${{ github.repository }}.git
-    #     BRANCH: gh-pages
-    #     FOLDER: pages
-    #     GITHUB_TOKEN: ${{ secrets.GHPAGES_TOKEN }}
-    #     SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
-
-    # - run: echo "🍏 This job's status is ${{ job.status }}."
+    - run: echo "🍏 This job's status is ${{ job.status }}."
