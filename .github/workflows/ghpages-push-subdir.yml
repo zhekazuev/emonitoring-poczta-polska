@@ -31,6 +31,7 @@ jobs:
     # Push git subdirectory to gh-pages branch
     - name: Deploy
       uses: s0/git-publish-subdir-action@develop
+      run: echo $REPO
       env:
         #REPO: git@github.com:zhekazuev/emonitoring-poczta-polska.git
         REPO: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY
