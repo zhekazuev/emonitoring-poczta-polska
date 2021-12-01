@@ -16,9 +16,6 @@ jobs:
     - name: Check out repository code
       uses: actions/checkout@master
 
-    # - name: Move files into ./pages and check file
-    #   run: mkdir /tmp/pages && cp --recursive ./src/static/* /tmp/pages && mv /tmp/pages ./pages
-
     - name: List files in the repository
       run: tree ./src/static
 
