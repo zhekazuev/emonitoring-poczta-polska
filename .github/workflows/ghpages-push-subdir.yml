@@ -28,7 +28,7 @@ jobs:
       uses: s0/git-publish-subdir-action@develop
       env:
         #REPO: git@github.com:zhekazuev/emonitoring-poczta-polska.git
-        REPO: ${{ github.server_url }}${{ github.repository }}
+        REPO: ${{ github.server_url }}/${{ github.repository }}
         BRANCH: gh-pages
         FOLDER: pages
         GITHUB_TOKEN: ${{ secrets.GHPAGES_TOKEN }}
