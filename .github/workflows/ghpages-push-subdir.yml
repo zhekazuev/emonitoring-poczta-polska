@@ -11,7 +11,7 @@ jobs:
     steps:
     
     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-    - run: echo "The name of github.repository is $GITHUB_SERVER_URL/$GITHUB_REPOSITORY."
+    - run: echo "The name of github.repository is ${{ github.server_url }}/${{ github.repository }}."
     
     - name: Check out repository code
       uses: actions/checkout@master
@@ -28,8 +28,7 @@ jobs:
       uses: s0/git-publish-subdir-action@develop
       env:
         #REPO: git@github.com:zhekazuev/emonitoring-poczta-polska.git
-        # REPO: ${{ github.server_url }}/${{ github.repository }}
-        REPO: self
+        REPO: ${{ github.server_url }}/${{ github.repository }}.git/
         BRANCH: gh-pages
         FOLDER: pages
         GITHUB_TOKEN: ${{ secrets.GHPAGES_TOKEN }}
