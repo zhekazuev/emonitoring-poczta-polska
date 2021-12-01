@@ -1,12 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "html": "html-minifier --collapse-whitespace --remove-comments --output dist/index.html src/static/index.html",
-    "css": "csso src/css/styles.css --output dist/styles.css",
-    "start": "npm run html && npm run css"
-  },
-  "dependencies": {
-    "csso-cli": "^3.0.0",
-    "html-minifier": "^4.0.0"
+    "html": "html-minifier --collapse-whitespace --remove-comments --input-dir src/static/index.html --output dist/index.html",
+    "scss": "sass --no-source-map --style=compressed src/scss/style.css:dist/css/style.css",
+    "start": "npm run html && npm run scss"
   }
 }
