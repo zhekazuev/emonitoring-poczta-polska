@@ -8,6 +8,6 @@ exclude:
   - .github
 # these are the files and directories that jekyll will exclude from the build
 include:
-  - README.md
+  - readme.md
   - LICENSE
 permalink: /readme/
