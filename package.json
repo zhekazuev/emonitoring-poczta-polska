@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "html-ghpages": "html-minifier --collapse-whitespace --remove-comments --input-dir /tmp/before/index.html --output /tmp/after/index.html",
+    "html-ghpages": "html-minifier --collapse-whitespace --remove-comments --input-dir /tmp/before/ --output-dir /tmp/after/ --file-ext html",
     "scss-ghpages": "sass --no-source-map --style=compressed /tmp/before/scss/style.css:/tmp/after/css/style.css",
     "build": "npm run html-ghpages && npm run scss-ghpages"
   },
