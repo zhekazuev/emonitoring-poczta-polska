@@ -21,7 +21,7 @@ jobs:
           cp ./src/static/*.html /tmp/before/
           # cp ./src/static/img/* /tmp/before/img/
           cp ./src/static/img/* /tmp/after/img/
-          cp ./README.md /tmp/before/about/
+          cp ./README.md /tmp/after/about/
           # cp ./references/* /tmp/before/about/references/
           cp ./references/* /tmp/after/about/references/
 
