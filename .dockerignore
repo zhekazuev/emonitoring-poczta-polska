@@ -1,7 +1,6 @@
 .github
 references
 scripts
-src/scss
 venv
 .dockerignore
 .gitignore
