@@ -63,7 +63,7 @@
         <div class="container">
             <div class="d-md-flex justify-content-between align-items-center">
                 <h2 class="mb-3 mb-md-0 c-preview__title">Check the status of your shipment</h2>
-                <form class="search-input input-group" action="/search" method="get">
+                <form class="search-input input-group" action="" method="get">
                     <label for="number"></label>
                     <input type="search" name="number" id="number" class="form-control rounded-0" placeholder="CP23416576PL" aria-label="Package number" aria-describedby="button-number">
                     <button class="btn btn-dark btn-lg rounded-0" type="submit" id="button-number">Enter</button>
@@ -71,6 +71,26 @@
             </div>
         </div>
     </section>
+
+    <!-- Data render -->
+    {% if data %}
+        <section class="bg-dark text-light p-5 c-preview" id="data">
+            <div class="container">
+                <div class="title">
+                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-0">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <h3 class="card-title mb-3">Parcel number {{ data.number }}</h3>
+                            <p class="card-text"></p>
+                            <a href="#letters" class="btn btn-poland-red rounded-0">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
 
     <!-- Shipments -->
     <section class="p-5" id="shipments">
