@@ -4,5 +4,9 @@
     "html-ghpages": "html-minifier --collapse-whitespace --remove-comments --input-dir /tmp/before/index.html --output /tmp/after/index.html",
     "scss-ghpages": "sass --no-source-map --style=compressed /tmp/before/scss/style.css:/tmp/after/css/style.css",
     "start": "npm run html-ghpages && npm run scss-ghpages"
+  },
+  "dependencies": {
+    "html-minifier": "^4.0.0",
+    "sass": "^1.44.0"
   }
 }
