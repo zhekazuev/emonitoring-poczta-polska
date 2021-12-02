@@ -1,0 +1,12 @@
+.github
+references
+scripts
+src/scss
+venv
+.dockerignore
+.gitignore
+Dockerfile
+LICENSE
+package-lock.json
+package.json
+README.md
