@@ -1,7 +1,7 @@
 FROM mpsorg/sass-compiler AS sass-compiler
 COPY /src/scss /scss
 RUN mkdir /css
-RUN sass /scss:/css
+RUN sass /scss/style.scss:/css/style.css
 
 FROM python:3.8-slim-buster
 COPY requirements.txt requirements.txt
