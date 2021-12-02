@@ -2,6 +2,12 @@ name: Deploy site to GitHub Pages
 
 on:
   push:	
+    paths:
+      - 'references'
+      - 'src/static/**'
+      - 'src/templates/**'
+      - 'README.md'
+      - 'package.json'
     branches:	
       - main
 
@@ -11,38 +17,51 @@ jobs:
     runs-on: ubuntu-latest    
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+
       - name: Check out repository code
         uses: actions/checkout@master
+      
       - name: Create dirs and copy source files
         run: |
           mkdir -p /tmp/before/{scss,img,about/references}
           mkdir -p /tmp/after/{css,img,about/references}
           cp ./src/scss/*.scss /tmp/before/scss/
-          cp ./src/static/*.html /tmp/before/
+          cp ./src/templates/*.html /tmp/before/
           # cp ./src/static/img/* /tmp/before/img/
           cp ./src/static/img/* /tmp/after/img/
           cp ./README.md /tmp/after/about/
           # cp ./references/* /tmp/before/about/references/
           cp ./references/* /tmp/after/about/references/
 
+      # Listing before
       - name: List files in the /tmp/before - before build and compress images
         run: tree /tmp/before
-      # webp change
+
+      # # Compressing images
       # - name: Compress Images
       #   uses: calibreapp/webp-optimizer@master
       #   with:
       #     githubToken: ${{ secrets.GITHUB_TOKEN }}
+      #     jpegQuality: "80"
+      #     pngQuality: "80"
+      #     webpQuality: "80"
 
-      - run: npm ci
-      - run: npm run build
+      # Build
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
       
+      # Listing after
       - name: List files in the /tmp/after - after build and compress images
         run: tree /tmp/after
 
+      # Deploy
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: /tmp/after/ # The folder the action should deploy.
 
+      # Job Status
       - run: echo "🍏 This job's status is ${{ job.status }}."
