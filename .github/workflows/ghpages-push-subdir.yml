@@ -1,4 +1,5 @@
 name: Deploy site to GitHub Pages
+
 on:
   push:	
     branches:	
@@ -9,28 +10,39 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest    
     steps:
-    
-    - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-    - run: echo "The name of github.repository is ${{ github.server_url }}/${{ github.repository }}."
-    
-    - name: Check out repository code
-      uses: actions/checkout@master
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - name: Check out repository code
+        uses: actions/checkout@master
+      - name: Create dirs and copy source files
+        run: |
+          mkdir -p /tmp/before/{scss,img,about/references}
+          mkdir -p /tmp/after/{css,img,about/references}
+          cp ./src/scss/*.scss /tmp/before/scss/
+          cp ./src/static/*.html /tmp/before/
+          # cp ./src/static/img/* /tmp/before/img/
+          cp ./src/static/img/* /tmp/after/img/
+          cp ./README.md /tmp/before/about/
+          # cp ./references/* /tmp/before/about/references/
+          cp ./references/* /tmp/after/about/references/
 
-    - name: Copy files into ./pages
-      run: |
-        mkdir -p /tmp/pages/about/references
-        cp --recursive ./src/static/* /tmp/pages
-        cp ./README.md /tmp/pages/about
-        cp --recursive ./references/* /tmp/pages/about/references
-        mv /tmp/pages ./pages
+      - name: List files in the /tmp/before - before build and compress images
+        run: tree /tmp/before
+      # webp change
+      # - name: Compress Images
+      #   uses: calibreapp/webp-optimizer@master
+      #   with:
+      #     githubToken: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: List files in the repository
-      run: tree ./pages
+      - run: npm ci
+      - run: npm run build
+      
+      - name: List files in the /tmp/after - after build and compress images
+        run: tree /tmp/after
 
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.1.7
-      with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: ./pages # The folder the action should deploy.
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: /tmp/after/ # The folder the action should deploy.
 
-    - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "🍏 This job's status is ${{ job.status }}."
