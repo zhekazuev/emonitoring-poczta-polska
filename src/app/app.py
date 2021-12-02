@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, jsonify
 import requests
 
@@ -41,6 +42,10 @@ def check_mailex(number, headers, language="EN", add_post_office_info="true"):
 
 @app.route('/')
 def index():
+    return render_template('index.html')
+
+@app.route('/search')
+def search():
     """Main function 
     - get and check parcel number
     - add headers to next request 
@@ -68,8 +73,11 @@ def index():
             data = None
     else:
         data = None
-    
-    return render_template('index.html', data=data)
+
+    return render_template('search.html', data=data)
+
 
 if __name__ == '__main__':
-    app.run()
+    # ----Remainder of Code----
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host= '0.0.0.0', port = port)
