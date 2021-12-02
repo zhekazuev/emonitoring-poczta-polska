@@ -1,8 +1,8 @@
 {
   "private": true,
   "scripts": {
-    "html": "html-minifier --collapse-whitespace --remove-comments --input-dir src/static/index.html --output dist/index.html",
-    "scss": "sass --no-source-map --style=compressed src/scss/style.css:dist/css/style.css",
-    "start": "npm run html && npm run scss"
+    "html-ghpages": "html-minifier --collapse-whitespace --remove-comments --input-dir /tmp/before/index.html --output /tmp/after/index.html",
+    "scss-ghpages": "sass --no-source-map --style=compressed /tmp/before/scss/style.css:/tmp/after/css/style.css",
+    "start": "npm run html-ghpages && npm run scss-ghpages"
   }
 }
