@@ -21,10 +21,11 @@ venv.bak/
 # node_modules and bootstrap 
 node_modules
 
-# SCSS and SASS 
+# SCSS and SASS
 .sass-cache
+*.min.js
+*.css
+*.min.css
 *.css.map
 *.sass.map
 *.scss.map
-*.min.js
-*.min.css
