@@ -8,10 +8,11 @@
 [Example of search](https://emonitoring-poczta-polska.herokuapp.com/search?number=12345)
 
 Curent Stack:
-- Bootstrap
-- PHP/WordPress
-- MySQL
-- Google Font API
+- Python - Flask
+- API Poland Post
+- HTML/CSS - Bootstrap and SCSS
+- Docker
+- GitHub Actions
 
 ## Pallete and Design:
 
