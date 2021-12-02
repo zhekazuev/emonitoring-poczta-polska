@@ -4,8 +4,7 @@ on:
   push:	
     paths:
       - 'references'
-      - 'src/static/**'
-      - 'src/templates/**'
+      - 'src/design/**'
       - 'README.md'
       - 'package.json'
     branches:	
