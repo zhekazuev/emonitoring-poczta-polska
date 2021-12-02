@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
 
-app = Flask(__name__, template_folder='templates', static_folder='static')
+# create Flask-object
+app = Flask(__name__, static_url_path='', template_folder='templates', static_folder='../design/')
 
 def check_mailex(number, headers, language="EN", add_post_office_info="true"):
     """Use api checkmailex and get json with information about parcel by number
@@ -62,15 +63,13 @@ def index():
     # check number in get-request
     if number:
         data = check_mailex(number, headers)
+        # check status of parcel - if mailStatus == -1 - parcel doesn't exist, else - exist
+        if data.get('mailStatus') == -1:
+            data = None
     else:
         data = None
-
-    # check status of parcel - if mailStatus == -1 - parcel doesn't exist, else - exist
-    if data.get('mailStatus') == -1:
-        data = None
-
+    
     return render_template('index.html', data=data)
-
 
 if __name__ == '__main__':
     app.run()
