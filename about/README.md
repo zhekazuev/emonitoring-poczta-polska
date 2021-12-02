@@ -1,9 +1,11 @@
-[Redisign for emonitoring.poczta-polska.pl](https://zhekazuev.github.io/emonitoring-poczta-polska/)
 # Emonitoring Poczta Polska
 
 ## About
 
-Redisign for poczta-polska.pl and emonitoring.poczta-polska.pl
+[About design and project](https://zhekazuev.github.io/emonitoring-poczta-polska/about)
+[Redisign for emonitoring.poczta-polska.pl](https://zhekazuev.github.io/emonitoring-poczta-polska/)
+[Working web application on Heroku](https://emonitoring-poczta-polska.herokuapp.com)
+[Example of search](https://emonitoring-poczta-polska.herokuapp.com/search?number=12345)
 
 Curent Stack:
 - Bootstrap
