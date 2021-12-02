@@ -31,6 +31,7 @@ jobs:
           cp ./src/design/img/* /tmp/after/img/
           cp ./README.md /tmp/after/about/
           # cp ./references/* /tmp/before/about/references/
+          cp _config.yml /tmp/after
           cp ./references/* /tmp/after/about/references/
 
       # Listing before
