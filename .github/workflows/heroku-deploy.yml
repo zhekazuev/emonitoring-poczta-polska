@@ -3,9 +3,9 @@ name: Deploy app to Heroku
 on:
   push:	
     paths:
-      - 'src/scss'
-      - 'src/app'
-      - 'src/design/img'
+      - 'src/scss/**'
+      - 'src/app/**'
+      - 'src/design/img/**'
       - 'package.json'
       - 'Dockerfile'
       - '.dockerignore'
