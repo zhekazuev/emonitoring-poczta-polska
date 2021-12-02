@@ -26,9 +26,9 @@ jobs:
           mkdir -p /tmp/before/{scss,img,about/references}
           mkdir -p /tmp/after/{css,img,about/references}
           cp ./src/scss/*.scss /tmp/before/scss/
-          cp ./src/templates/*.html /tmp/before/
-          # cp ./src/static/img/* /tmp/before/img/
-          cp ./src/static/img/* /tmp/after/img/
+          cp ./src/design/*.html /tmp/before/
+          # cp ./src/design/img/* /tmp/before/img/
+          cp ./src/design/img/* /tmp/after/img/
           cp ./README.md /tmp/after/about/
           # cp ./references/* /tmp/before/about/references/
           cp ./references/* /tmp/after/about/references/
