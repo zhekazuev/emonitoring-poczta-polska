@@ -1,5 +1,6 @@
 FROM mpsorg/sass-compiler AS sass-compiler
-RUN mkdir /css && mkdir /scss
+RUN mkdir /css
+RUN mkdir /scss
 COPY /src/scss /scss
 RUN sass /scss:/css
 
