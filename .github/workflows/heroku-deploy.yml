@@ -15,30 +15,17 @@ on:
       - main
 
 jobs:
-  buildx:
+  build:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2
-      -
-        uses: docker/setup-buildx-action@v1
-        id: buildx
+      - name: Build, Push and Release a Docker container to Heroku.
+        uses: gonuit/heroku-docker-deploy@v1.3.3
         with:
-          install: true
-      -
-        name: Build
-        run: |
-          docker build . # will run buildx
-
-    # Deploy to Heroku
-    deploy:
-      needs: build
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@master
-        - uses: akhileshns/heroku-deploy@v3.12.12
-          with:
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-            heroku_app_name: "emonitoring-poczta-polska"
-            heroku_email: "zhekazuev@gmail.com"
+          email: "zhekazuev@gmail.com"
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+          heroku_app_name: "emonitoring-poczta-polska"
+          dockerfile_directory: ./
+          dockerfile_name: Dockerfile
+          docker_options: "--no-cache"
