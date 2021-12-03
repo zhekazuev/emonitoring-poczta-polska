@@ -15,55 +15,28 @@ on:
       - main
 
 jobs:
-  deploy:
-    name: Deploy to GitHub Pages
+  build:
     runs-on: ubuntu-latest    
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-
-      - name: Check out repository code
-        uses: actions/checkout@master
-      
-      - name: Create dirs and copy source files
-        run: |
-          mkdir -p /tmp/before/{scss, img, app/templates}
-          mkdir -p /tmp/after/{css, img, app/templates}
-          cp ./src/scss/*.scss /tmp/before/scss/
-          cp ./src/app/templates/*.html /tmp/before/app/templates
-          # cp ./src/design/img/* /tmp/before/img/
-          cp ./src/design/img/* /tmp/after/img/
-          cp ./src/app/*.py /tmp/after/app/
-
-      # Listing before
-      - name: List files in the /tmp/before - before build and compress images
-        run: tree /tmp/before
-
-      # # Compressing images
-      # - name: Compress Images
-      #   uses: calibreapp/webp-optimizer@master
-      #   with:
-      #     githubToken: ${{ secrets.GITHUB_TOKEN }}
-      #     jpegQuality: "80"
-      #     pngQuality: "80"
-      #     webpQuality: "80"
-
-      # Build
-      - name: Install dependencies
-        run: npm ci
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup docker buildx
+        uses: docker/setup-buildx-action@v1
+        id: buildx
+        with:
+          install: true
       - name: Build
-        run: npm run build
-      
-      # Listing after
-      - name: List files in the /tmp/after - after build and compress images
-        run: tree /tmp/after
+        run: |
+          docker build . # will run buildx
 
-    # Deploy
+    # Deploy to Heroku
     deploy:
       needs: build
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v2
-        - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        - uses: actions/checkout@master
+        - uses: akhileshns/heroku-deploy@v3.12.12
           with:
             heroku_api_key: ${{secrets.HEROKU_API_KEY}}
             heroku_app_name: "emonitoring-poczta-polska"
