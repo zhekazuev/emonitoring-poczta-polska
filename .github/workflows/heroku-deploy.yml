@@ -20,12 +20,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build, Push and Release a Docker container to Heroku.
-        uses: gonuit/heroku-docker-deploy@v1.3.3
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          email: "zhekazuev@gmail.com"
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: "emonitoring-poczta-polska"
-          dockerfile_directory: ./
-          dockerfile_name: Dockerfile
-          docker_options: "--no-cache"
+          heroku_email: "zhekazuev@gmail.com"
+          usedocker: true
