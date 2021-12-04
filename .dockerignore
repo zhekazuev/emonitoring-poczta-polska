@@ -2,10 +2,11 @@
 references
 scripts
 venv
+_config.yml
 .dockerignore
 .gitignore
 Dockerfile
+heroku.yml
 LICENSE
-package-lock.json
-package.json
 README.md
+scss
