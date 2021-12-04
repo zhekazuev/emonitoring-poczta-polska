@@ -5,7 +5,7 @@ FROM python:3.8-alpine as base
 # Stage 1 - Compile scss and minimize html/css
 FROM node:alpine AS front-compiler
 WORKDIR /tmp
-COPY package*.json .
+COPY package*.json ./
 RUN npm ci
 COPY src/scss/ before/scss/
 COPY src/app/templates/ before/
