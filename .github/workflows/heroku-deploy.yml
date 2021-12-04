@@ -6,10 +6,10 @@ on:
       - 'src/scss/**'
       - 'src/app/**'
       - 'src/design/img/**'
-      - 'package.json'
-      - 'Dockerfile'
       - '.dockerignore'
+      - 'Dockerfile'
       - 'heroku.yml'
+      - 'package.json'
       - 'requirements.txt'
     branches:	
       - main
