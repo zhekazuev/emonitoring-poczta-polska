@@ -32,7 +32,7 @@ ENV PYTHONUNBUFFERED 1
 EXPOSE 5000
 COPY --from=builder /install /usr/local
 COPY /src/app/*.py ./app/
-COPY /src/design/img ./design/img
+COPY /src/design/img ./design/img/
 COPY --from=front-compiler /tmp/after/css design/css/
 COPY --from=front-compiler /tmp/after/*.html app/templates/
 CMD ["gunicorn", "--chdir", "app", "--bind", ":5000", "--workers", "1", "wsgi:app"]
