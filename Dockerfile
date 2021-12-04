@@ -30,7 +30,7 @@ WORKDIR /src
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 EXPOSE 5000
-COPY --from=builder /install /usr/local
+COPY --from=builder /install /usr/local/
 COPY /src/app/*.py ./app/
 COPY /src/design/img ./design/img/
 COPY --from=front-compiler /tmp/after/css design/css/
