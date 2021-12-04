@@ -5,6 +5,16 @@ import requests
 # create Flask-object
 app = Flask(__name__, static_url_path='', template_folder='templates', static_folder='../design/')
 
+@app.errorhandler(Exception)
+def server_error(err):
+    app.logger.error(f"App error: {err}")
+    return "Forbidden", 403
+
+@app.errorhandler(ZeroDivisionError)
+def server_error(err):
+    app.logger.error(f"Server error: {err}")
+    return "Cannot divide by 0", 500
+
 def check_mailex(number, headers, language="EN", add_post_office_info="true"):
     """Use api checkmailex and get json with information about parcel by number
 
