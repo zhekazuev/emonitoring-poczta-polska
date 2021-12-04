@@ -5,7 +5,7 @@ FROM python:3.8-alpine as base
 # Stage 1 - Compile scss and minimize html/css
 FROM node:alpine AS front-compiler
 WORKDIR /tmp
-COPY package*.json .
+COPY package*.json ./
 RUN npm ci
 COPY src/scss/ before/scss/
 COPY src/app/templates/ before/
@@ -33,9 +33,9 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 EXPOSE 5000
 RUN apk add libev
-COPY --from=builder /install /usr/local
+COPY --from=builder /install /usr/local/
 COPY /src/app/*.py ./app/
-COPY /src/design/img ./design/img
+COPY /src/design/img ./design/img/
 COPY --from=front-compiler /tmp/after/css design/css/
 COPY --from=front-compiler /tmp/after/*.html app/templates/
 CMD [ "python", "app/bjoern.py"]
