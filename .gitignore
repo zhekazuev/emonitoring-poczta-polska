@@ -20,6 +20,7 @@ venv.bak/
 
 # node_modules and bootstrap 
 node_modules
+bootstrap
 
 # SCSS and SASS
 .sass-cache
