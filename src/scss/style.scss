@@ -1,27 +1,43 @@
-// // bootstrap
-// @import "../bootstrap/scss/functions";
-// @import "../bootstrap/scss/variables";
-// @import "../bootstrap/scss/mixins/breakpoints";
-// @import "../bootstrap/scss/mixins/container";
-// @import "../bootstrap/scss/mixins/grid";
+// @use "bootstrap" as bootstrap;
+// @import "./custom-normalize";
+// @import "bootstrap";
+// @import "tracking";
+// .header {
+//     @extend .navbar;
+//     @extend .navbar-expand-md;
+//     @extend .navbar-light;
+//     @extend .bg-light;
 
-// gradients
-@import "gradients";
+//     &__nav-brand {
+//         @extend .navbar-brand;
+//     }
 
-// animations
-@import "animations";
+//     &__nav-toogler {
+//         @extend .navbar-toggler;
+        
+//     }
 
-// animations
-@import "buttons";
+//     &__nav-menu {
+//         @extend .collapse;
+//         @extend .navbar-collapse;
+//     }
+// }
+
+@import "./buttons";
+@import "./cards";
+@import "./gradients";
+@import "./fade-entrances";
+@import "./zoom-entrances";
+
+@include btn-poland-red;
+@include cards;
+@include gradient;
+@include zoom-in;
+@include fadein-down;
 
 // modification for search panel
 @media (min-width: 768px) {
     .search-input {
-      width: 75%;
+        width: 75%;
     }
-}  
-
-// container test
-// .container {
-//     @include make-container();   
-// }
+}
