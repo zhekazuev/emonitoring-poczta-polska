@@ -1,6 +1,7 @@
 .github
 references
 scripts
+bootstrap
 venv
 _config.yml
 .dockerignore
