@@ -5,7 +5,7 @@ on:
     paths:
       - 'src/scss/**'
       - 'src/app/**'
-      - 'src/design/img/**'
+      - 'src/design/**'
       - '.dockerignore'
       - 'Dockerfile'
       - 'heroku.yml'
