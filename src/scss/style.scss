@@ -28,16 +28,21 @@
 @import "./gradients";
 @import "./fade-entrances";
 @import "./zoom-entrances";
+@import "./tables";
 
 @include btn-poland-red;
 @include cards;
 @include gradient;
 @include zoom-in;
 @include fadein-down;
+@include tables;
 
 // modification for search panel
 @media (min-width: 768px) {
+    section#search.gradient{
+      width: 75%;
+    }
     .search-input {
-        width: 75%;
+      width: 75%;
     }
 }
