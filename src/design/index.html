@@ -7,21 +7,21 @@
     <meta name="description" content="Author: Eugene Zuev, Design: Eugene Zuev, Category: Post, Tracking">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" rel="preload" href="css/style.css" as="style">
     <title>Poland Post Tracking</title>
     <link rel="shortcut icon" type="image/jpg" href="img/favicon.png"/>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light navbar-light bg-light">
-        <div class="container animate__fadeInDown">
+    <nav class="navbar navbar-expand-md bg-light">
+        <div class="container navbar-light animate__fadeInDown">
             <a href="#home" class="navbar-brand">
-                <img src="img/logo.svg" alt="Poland Post Logo" width="200" height="60">
+                <img src="img/logo.png" alt="Poland Post Logo" width="200" height="44" class="rounded-5">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Justify">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navmenu">
+            <div class="navbar-collapse collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a href="#home" class="nav-link">Home</a>
@@ -36,11 +36,12 @@
             </div>
         </div>
     </nav>
-
+    <!-- End Navbar -->
+    
     <!-- Showcase -->
     <section class="bg-light text-dark p-5 text-center pt-lg-5" id="showcase">
         <div class="container">
-            <div class="d-sm-flex">
+            <div class="showcase d-sm-flex">
                 <div>
                     <h1>Tracking</h1>
                     <h2 class="lead">
@@ -48,67 +49,352 @@
                         check the current status of your shipment, 
                         both of Poczta Polska as well as foreign operators.
                     </h2>
-                    <!-- <p>
-                        Poczta Polska S.A. makes available Certified Customs Declaration 
-                        not earlier than 7 calendar days after delivery or collection.
-                    </p> -->
                 </div>
-                <!-- <img class="img-fluid w-50" src="img/showcase.svg" alt=""> -->
             </div>
         </div>
     </section>
 
     <!-- Search -->
-    <section class="bg-dark text-light p-5 gradient c-preview" id="search">
-        <div class="container">
+    <section class="bg-light p-1" id="search">
+        <div class="container p-5 rounded-5 gradient">
             <div class="d-md-flex justify-content-between align-items-center">
-                <h2 class="mb-3 mb-md-0 c-preview__title">Check the status of your shipment</h2>
+                <h2 class="m-1 mb-md-0">Check the status of your shipment</h2>
                 <form class="search-input input-group" action="" method="get">
-                    <label for="number"></label>
-                    <input type="search" name="number" id="number" class="form-control rounded-0" placeholder="CP23416576PL" aria-label="Package number" aria-describedby="button-number">
-                    <button class="btn btn-dark btn-lg rounded-0" type="submit" id="button-number">Enter</button>
+                    <!-- <label for="number"></label> -->
+                    <input type="search" pattern="[^\s]*" name="number" id="number" class="form-control rounded-5" placeholder="CP23416576PL" aria-label="Package number" aria-describedby="button-number">
+                    <button class="btn btn-dark btn-lg rounded-5" type="submit" id="button-number">Enter</button>
                 </form>
             </div>
         </div>
     </section>
 
+
+    <!-- Parcel tracking -->
+    <section class="bg-light p-5" id="tracking">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <div class="card bg-light text-dark shadow p-1 bg-white rounded-5">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3" style="color:#039313">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                            <!-- <div class="h1 mb-3" style="color: #d31c14;">
+                                <i class="bi bi-dash-circle"></i>
+                            </div>
+                            <div class="h1 mb-3" style="color: #d6715a;">
+                                <i class="bi bi-exclamation-circle"></i>
+                            </div>
+                            <div class="h1 mb-3" style="color: #d31c14;">
+                                <i class="bi bi-x-circle"></i>
+                            </div>
+                            <div class="h1 mb-3" style="color: #d6715a;">
+                                <i class="bi bi-hourglass-split"></i>
+                            </div> -->
+                            
+                            <h2 class="card-title mb-3">
+                                Item delivered <br>
+                                2021-10-22 09:59:00
+                            </h2>
+                            <p>Signed for by: <strong>12345</strong></p>
+                            <div>
+                                <p class="">
+                                    <button class="btn btn-poland-red rounded-5 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-about-package" aria-expanded="false" aria-controls="collapseExample">
+                                        About package
+                                    </button>
+                                    <button class="btn btn-poland-red rounded-5 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-timiline" aria-expanded="false" aria-controls="collapseExample">
+                                        Show history
+                                    </button>
+                                </p>
+
+                                <div class="collapse m-3" id="collapse-about-package">
+                                    <div class="row justify-content-md-center gy-1">
+                                        <div class="col-12 center">
+                                            <div class="table-responsive">
+                                                <table class="table align-items-center mb-0 table-hover table-borderless rounden">
+                                                    <!-- <thead>
+                                                        <tr>
+                                                            <th scope="col" class="text-end">A</th>
+                                                        </tr>
+                                                    </thead> -->
+                                                    <tbody>
+                                                        <tr style="border-radius: 10px">
+                                                            <td class="text-start"><strong>Shipping date:</strong></td>
+                                                            <td class="text-start">2021-06-15</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-start"><strong>Package type:</strong></td>
+                                                            <td class="text-start">Priority registered letter</td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-start"><strong>Dispatch country:</strong></td>
+                                                            <td class="text-start">Poland</td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-start"><strong>Country of destination:</strong></td>
+                                                            <td class="text-start">Poland</td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-start"><strong>Complimentary/ additional services:</strong></td>
+                                                            <td class="text-start">
+                                                                EPOR - Electronic advice of delivery - extended <br>
+                                                                Advice of delivery <br>
+                                                                Advice of delivery
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="text-start"><strong>Package weigh:</strong></td>
+                                                            <td class="text-start">0.05 kg</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Parcel Tracking End -->
+
+
+
+    <!-- Timeline -->
+    <section class="timiline collapse bg-light" id="collapse-timiline">
+        <div class="container">
+            <div class="col-12">
+                <div class="card px-5 py-5 bg-light text-dark shadow-lg rounded-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Заголовок карточки</h5>
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0 table-hover table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="text-start">Имя</th>
+                                        <th scope="col" class="text-center">Фамилия</th>
+                                        <th scope="col" class="text-center">Обращение</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, expedita?</td>
+                                        <td class="text-center">Otto</td>
+                                        <td class="text-center">@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, officiis?</td>
+                                        <td class="text-center">Thornton</td>
+                                        <td class="text-center">@fat</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, porro.</td>
+                                        <td class="text-center">Larry the Bird</td>
+                                        <td class="text-center">@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start">Jacob</td>
+                                        <td class="text-center">Larry the Bird</td>
+                                        <td class="text-center">@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start">Jacob</td>
+                                        <td class="text-center">Larry the Bird</td>
+                                        <td class="text-center">@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-start">Jacob</td>
+                                        <td class="text-center">Larry the Bird</td>
+                                        <td class="text-center">@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">Jacob</td>
+                                        <td class="text-center">Larry the Bird</td>
+                                        <td class="text-center">@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">Jacob</td>
+                                        <td class="text-center">Larry the Bird</td>
+                                        <td class="text-center">@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">Jacob</td>
+                                        <td class="text-center">Larry the Bird</td>
+                                        <td class="text-center">@twitter</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End -->
+
+
+    <!-- Pickup at Point Banner -->
+    <section class="p-5 bg-light" id="baner">
+        <div class="container">
+            <div class="row align-items-center justify-content-between position-relative">
+                <div class="col-md">
+                    <picture>
+                        <source srcset="img/hero.webp" type="image/webp">
+                        <img src="img/hero.jpg" class="img-fluid rounded-5 shadow-lg" alt="hero">
+                    </picture>
+                </div>
+                <div class="col-lg p-5">
+                    <h2>Take your parcels in home or point</h2>
+                    <p class="lead">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Perspiciatis quisquam laudantium accusantium, architecto unde.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor.
+                    </p>
+                    <a href="#" class="btn btn-poland-red rounded-5 stretched-link">
+                        Read More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero with image -->
+    <!-- <section id="hero-with-image" class="p-5 animate__fadeInUp">
+        <div class="container col-xxl-8">
+            <div class="row flex-lg-row-reverse align-items-center g-1 py-5">
+              <div class="col-10 col-sm-8 col-lg-6">
+                <img src="../../references/adobecolor_color_godlo_prl.jpeg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+              </div>
+              <div class="col-lg-6">
+                <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
+                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, 
+                    the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, 
+                    responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
+                  <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section> -->
+    
+    
+    <!-- Cards -->
+    <section class="p-1 ships bg-light">
+        <div class="container px-4 py-5" id="custom-cards">
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg zoom"
+                        style="background-image: url('img/letter.webp');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                                From Poland with Love
+                            </h2>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <small>Tap on me</small>
+                                    <a href="#" class="stretched-link"></a>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <small>Letters</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg zoom"
+                        style="background-image: url('img/elephant.webp'), url('img/elephant.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                                Do you want an Elephant? I'll deliver!
+                            </h2>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <small>Tap on me</small>
+                                    <a href="#" class="stretched-link"></a>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <small>Parcels</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col rounded-0">
+                    <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg zoom"
+                        style="background-image: url('img/express.webp');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                                Faster than Light
+                            </h2>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <small>Tap on me</small>
+                                    <a href="#" class="stretched-link"></a>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <small>EMS Courier</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Shipments -->
-    <section class="p-5" id="shipments">
-        <div class="container animate__fadeInUp">
+    <section class="p-1 bg-light" id="shipments">
+        <div class="container">
             <div class="row text-center gy-1 ">
                 <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-0">
+                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5 zoom">
                         <div class="card-body text-center">
                             <div class="h1 mb-3">
                                 <i class="bi bi-envelope"></i>
                             </div>
                             <h3 class="card-title mb-3">Letters</h3>
                             <p class="card-text">Tracking Foreign Shipments  - Letters</p>
-                            <a href="#letters" class="btn btn-poland-red rounded-0">Read More</a>
+                            <a href="#letters" class="btn btn-poland-red rounded-5 stretched-link">Read More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-0">
+                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5 zoom">
                         <div class="card-body text-center">
                             <div class="h1 mb-3">
                                 <i class="bi bi-box"></i>
                             </div>
                             <h3 class="card-title mb-3">Parcels</h3>
                             <p class="card-text">Tracking Foreign Shipments - parcels</p>
-                            <a href="#parcels" class="btn btn-poland-red rounded-0">Read More</a>
+                            <a href="#parcels" class="btn btn-poland-red rounded-5 stretched-link">Read More</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-0">
+                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5 zoom">
                         <div class="card-body text-center">
                             <div class="h1 mb-3">
                                 <i class="bi bi-truck"></i>
                             </div>
                             <h3 class="card-title mb-3">EMS</h3>
                             <p class="card-text">Tracking Courier Shipments</p>
-                            <a href="#courier" class="btn btn-poland-red rounded-0">Read More</a>
+                            <a href="#courier" class="btn btn-poland-red rounded-5 stretched-link">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -116,53 +402,82 @@
         </div>
     </section>
 
-
      <!-- Frequently Asked Questions -->
-    <section id="questions">
-        <div class="container animate__fadeInUp">
-            <div class="accordion accordion-flush" id="accordionExample">
+    <section class="p-1 bg-light" id="questions">
+        <div class="container">
+            <div class="accordion" id="accordion-faq">
                 <h1 class="text-center p-5 pt-lg-5">Frequently Asked Questions</h1>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
+                    <h2 class="accordion-header" id="heading-one">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            The given package number is incorrect
+                            How to find registered shipment?
                         </button>
                     </h2>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. 
-                            These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. 
-                            It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <strong>In order to find registered shipment,</strong> please type in the box the number 
+                            <code>(for example: 0015900773312345678, PX0000000013, RR123456789PL, CP123456789PL, VV123456789PL, EE123456789PL)</code> listed on the postal receipt, 
+                            without any spaces or parentheses, and <code>press Enter</code> or tap on <code>Enter Button</code>.                
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Please give the package number
+                    <h2 class="accordion-header" id="heading-two">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-two" aria-expanded="false" aria-controls="collapse-two">
+                            No shipment found, please enter the correct number.
                         </button>
                     </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div id="collapse-two" class="accordion-collapse collapse" aria-labelledby="heading-two" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. 
-                            These classes control the overall appearance, as well as the showing and hiding via CSS transitions. 
-                            You can modify any of this with custom CSS or overriding our default variables. 
-                            It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <strong>If the following message diplayed,</strong>
+                            the number is incorrect or the system does not list a shipment with the specified number.
                         </div>
                     </div>
                 </div>
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Accordion Item #3
+                    <h2 class="accordion-header" id="heading-three">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-three" aria-expanded="false" aria-controls="collapse-three">
+                            The shipping information does not conform to the information on the postal receipt.
                         </button>
                     </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div id="collapse-three" class="accordion-collapse collapse" aria-labelledby="heading-three" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. 
-                            These classes control the overall appearance, as well as the showing and hiding via CSS transitions. 
-                            You can modify any of this with custom CSS or overriding our default variables. 
-                            It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <strong>If the number is correct,</strong> the shipping information and event log for the parcel will be displayed. 
+                            If the shipping information does not conform to the information on the postal receipt, 
+                            please check if you have entered the number correctly.
+                            <br><br>
+                            <strong>In the case of registered letters,</strong> only dispatch and delivery date may be displayed, 
+                            without tracking information.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-four">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-four" aria-expanded="false" aria-controls="collapse-four">
+                            What types of shipments system currently provides?
+                        </button>
+                    </h2>
+                    <div id="collapse-four" class="accordion-collapse collapse" aria-labelledby="heading-four" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>The system currently provides</strong> information about the following types of shipments:<br><br>
+                            <ul class="list-unstyled">
+                                <li class="col-sm-3">Domestic
+                                    <ul>
+                                        <li>Postal Parcel</li>
+                                        <li>Pocztex</li>
+                                        <li>Cash on Delivery Package</li>
+                                        <li>Declared Value Packages</li>
+                                        <li>Business Packages</li>
+                                        <li>Dimensional Weight Package</li>
+                                    </ul>
+                                </li>
+                                <li class="col-sm-3">International
+                                    <ul>
+                                        <li>EMS</li>
+                                        <li>Postal Parcel</li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -170,13 +485,17 @@
         </div>
     </section>
 
-     <!--  -->
-    <section class="p-5" id="list">
-        <div class="container">
-            
-        </div>
+    <!-- Pickup at Point Banner -->
+    <section id="banner" class="bg-light p-5">
+
     </section>
 
+    <!-- Footer -->
+    <footer class="p-1 bg-light text-center position-relative">
+        <div class="container">
+           <p class="">Copyright &copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> Eugene Zuev</p> 
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
