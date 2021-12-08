@@ -84,7 +84,7 @@ def search():
     else:
         data = None
 
-    return render_template('search.html', data=data)
+    return render_template('results.html', data=data)
 
 
 if __name__ == '__main__':
