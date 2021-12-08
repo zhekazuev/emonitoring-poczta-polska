@@ -16,7 +16,7 @@
     <nav class="navbar navbar-expand-md bg-light">
         <div class="container navbar-light animate__fadeInDown">
             <a href="#home" class="navbar-brand">
-                <img src="img/logo.png" alt="Poland Post Logo" width="200" height="44" class="rounded-5">
+                <img src="img/logo.svg" alt="Poland Post Logo" width="200" height="44" class="rounded-5">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Justify">
                 <span class="navbar-toggler-icon"></span>
@@ -37,13 +37,14 @@
         </div>
     </nav>
     <!-- End Navbar -->
-    
+
+
     <!-- Showcase -->
     <section class="bg-light text-dark p-5 text-center pt-lg-5" id="showcase">
         <div class="container">
-            <div class="showcase d-sm-flex">
+            <div class="showcase">
                 <div>
-                    <h1>Tracking</h1>
+                    <h1 class="display-3 fw-bold lh-1 mb-3">Tracking</h1>
                     <h2 class="lead">
                         By selecting the tracking option you can 
                         check the current status of your shipment, 
@@ -53,6 +54,8 @@
             </div>
         </div>
     </section>
+    <!-- Showcase End -->
+
 
     <!-- Search -->
     <section class="bg-light p-1" id="search">
@@ -67,10 +70,11 @@
             </div>
         </div>
     </section>
+    <!-- Search End -->
 
 
-    <!-- Parcel tracking -->
-    <section class="bg-light p-5" id="tracking">
+    <!-- Parcel Tracking -->
+    <section class="bg-light py-5" id="tracking">
         <div class="container">
             <div class="row text-center">
                 <div class="col">
@@ -99,61 +103,112 @@
                             <p>Signed for by: <strong>12345</strong></p>
                             <div>
                                 <p class="">
-                                    <button class="btn btn-poland-red rounded-5 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-about-package" aria-expanded="false" aria-controls="collapseExample">
+                                    <!-- <button class="btn btn-poland-red rounded-5 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-about-package" aria-expanded="false" aria-controls="collapseExample">
                                         About package
-                                    </button>
+                                    </button> -->
                                     <button class="btn btn-poland-red rounded-5 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-timiline" aria-expanded="false" aria-controls="collapseExample">
                                         Show history
                                     </button>
                                 </p>
+                                <h4 class="py-3">About Package</h4>
+                                <div class="row justify-content-md-center gy-1">
+                                    <div class="col-12 center">
+                                        <div class="table-responsive">
+                                            <table class="table align-items-center mb-0 table-hover table-borderless rounded">
+                                                <tbody>
+                                                    <tr style="border-radius: 10px">
+                                                        <td class="text-start"><strong>Shipping date:</strong></td>
+                                                        <td class="text-start">2021-06-15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-start"><strong>Package type:</strong></td>
+                                                        <td class="text-start">Priority registered letter</td>
 
-                                <div class="collapse m-3" id="collapse-about-package">
-                                    <div class="row justify-content-md-center gy-1">
-                                        <div class="col-12 center">
-                                            <div class="table-responsive">
-                                                <table class="table align-items-center mb-0 table-hover table-borderless rounden">
-                                                    <!-- <thead>
-                                                        <tr>
-                                                            <th scope="col" class="text-end">A</th>
-                                                        </tr>
-                                                    </thead> -->
-                                                    <tbody>
-                                                        <tr style="border-radius: 10px">
-                                                            <td class="text-start"><strong>Shipping date:</strong></td>
-                                                            <td class="text-start">2021-06-15</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-start"><strong>Package type:</strong></td>
-                                                            <td class="text-start">Priority registered letter</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-start"><strong>Dispatch country:</strong></td>
+                                                        <td class="text-start">Poland</td>
 
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-start"><strong>Dispatch country:</strong></td>
-                                                            <td class="text-start">Poland</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-start"><strong>Country of destination:</strong></td>
+                                                        <td class="text-start">Poland</td>
 
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-start"><strong>Country of destination:</strong></td>
-                                                            <td class="text-start">Poland</td>
-
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-start"><strong>Complimentary/ additional services:</strong></td>
-                                                            <td class="text-start">
-                                                                EPOR - Electronic advice of delivery - extended <br>
-                                                                Advice of delivery <br>
-                                                                Advice of delivery
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class="text-start"><strong>Package weigh:</strong></td>
-                                                            <td class="text-start">0.05 kg</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-start"><strong>Complimentary/ additional services:</strong></td>
+                                                        <td class="text-start">
+                                                            EPOR - Electronic advice of delivery - extended <br>
+                                                            Advice of delivery <br>
+                                                            Advice of delivery
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-start"><strong>Package weigh:</strong></td>
+                                                        <td class="text-start">0.05 kg</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-
+                                    </div>
+                                    <div class="table-responsive collapse" id="collapse-timiline">
+                                        <h4 class="pt-5 pb-3 border-bottom">History</h4>
+                                        <table class="table align-items-center mb-0 table-hover table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="text-start">Имя</th>
+                                                    <th scope="col" class="text-center">Фамилия</th>
+                                                    <th scope="col" class="text-center">Обращение</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, expedita?</td>
+                                                    <td class="text-center">Otto</td>
+                                                    <td class="text-center">@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, officiis?</td>
+                                                    <td class="text-center">Thornton</td>
+                                                    <td class="text-center">@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, porro.</td>
+                                                    <td class="text-center">Larry the Bird</td>
+                                                    <td class="text-center">@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-start">Jacob</td>
+                                                    <td class="text-center">Larry the Bird</td>
+                                                    <td class="text-center">@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-start">Jacob</td>
+                                                    <td class="text-center">Larry the Bird</td>
+                                                    <td class="text-center">@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-start">Jacob</td>
+                                                    <td class="text-center">Larry the Bird</td>
+                                                    <td class="text-center">@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">Jacob</td>
+                                                    <td class="text-center">Larry the Bird</td>
+                                                    <td class="text-center">@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">Jacob</td>
+                                                    <td class="text-center">Larry the Bird</td>
+                                                    <td class="text-center">@twitter</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">Jacob</td>
+                                                    <td class="text-center">Larry the Bird</td>
+                                                    <td class="text-center">@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -166,81 +221,23 @@
     <!-- Parcel Tracking End -->
 
 
-
     <!-- Timeline -->
-    <section class="timiline collapse bg-light" id="collapse-timiline">
+    <!-- <section class="timiline collapse bg-light" id="collapse-timiline">
         <div class="container">
             <div class="col-12">
                 <div class="card px-5 py-5 bg-light text-dark shadow-lg rounded-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Заголовок карточки</h5>
-                        <div class="table-responsive">
-                            <table class="table align-items-center mb-0 table-hover table-borderless">
-                                <thead>
-                                    <tr>
-                                        <th scope="col" class="text-start">Имя</th>
-                                        <th scope="col" class="text-center">Фамилия</th>
-                                        <th scope="col" class="text-center">Обращение</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, expedita?</td>
-                                        <td class="text-center">Otto</td>
-                                        <td class="text-center">@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, officiis?</td>
-                                        <td class="text-center">Thornton</td>
-                                        <td class="text-center">@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, porro.</td>
-                                        <td class="text-center">Larry the Bird</td>
-                                        <td class="text-center">@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start">Jacob</td>
-                                        <td class="text-center">Larry the Bird</td>
-                                        <td class="text-center">@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start">Jacob</td>
-                                        <td class="text-center">Larry the Bird</td>
-                                        <td class="text-center">@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-start">Jacob</td>
-                                        <td class="text-center">Larry the Bird</td>
-                                        <td class="text-center">@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">Jacob</td>
-                                        <td class="text-center">Larry the Bird</td>
-                                        <td class="text-center">@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">Jacob</td>
-                                        <td class="text-center">Larry the Bird</td>
-                                        <td class="text-center">@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">Jacob</td>
-                                        <td class="text-center">Larry the Bird</td>
-                                        <td class="text-center">@twitter</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End -->
+    </section> -->
+    <!-- Timeline End -->
 
 
-    <!-- Pickup at Point Banner -->
+    <!-- Banner -->
     <section class="p-5 bg-light" id="baner">
         <div class="container">
             <div class="row align-items-center justify-content-between position-relative">
@@ -251,7 +248,7 @@
                     </picture>
                 </div>
                 <div class="col-lg p-5">
-                    <h2>Take your parcels in home or point</h2>
+                    <h2 class="display-5 fw-bold lh-1 mb-3">Take your parcels in home or point</h2>
                     <p class="lead">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                         Perspiciatis quisquam laudantium accusantium, architecto unde.
@@ -259,35 +256,60 @@
                     <p>
                         Lorem ipsum dolor.
                     </p>
-                    <a href="#" class="btn btn-poland-red rounded-5 stretched-link">
+                    <a href="#" class="btn btn-poland-red btn-lg px-4 me-md-2 rounded-5">
                         Read More
                     </a>
                 </div>
             </div>
         </div>
     </section>
+    <!-- Banner End -->
 
-    
-    <!-- Hero with image -->
-    <!-- <section id="hero-with-image" class="p-5 animate__fadeInUp">
-        <div class="container col-xxl-8">
-            <div class="row flex-lg-row-reverse align-items-center g-1 py-5">
-              <div class="col-10 col-sm-8 col-lg-6">
-                <img src="../../references/adobecolor_color_godlo_prl.jpeg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-              </div>
-              <div class="col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
-                <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, 
-                    the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, 
-                    responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Primary</button>
-                  <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+
+    <!-- Shipments -->
+    <section class="p-1 bg-light" id="shipments">
+        <div class="container">
+            <div class="row text-center gy-1 ">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5 zoom">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <h3 class="card-title mb-3">Letters</h3>
+                            <p class="card-text">Tracking Foreign Shipments  - Letters</p>
+                            <a href="#letters" class="btn btn-poland-red rounded-5 stretched-link">Read More</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5 zoom">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-box"></i>
+                            </div>
+                            <h3 class="card-title mb-3">Parcels</h3>
+                            <p class="card-text">Tracking Foreign Shipments - parcels</p>
+                            <a href="#parcels" class="btn btn-poland-red rounded-5 stretched-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5 zoom">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-truck"></i>
+                            </div>
+                            <h3 class="card-title mb-3">EMS</h3>
+                            <p class="card-text">Tracking Courier Shipments</p>
+                            <a href="#courier" class="btn btn-poland-red rounded-5 stretched-link">Read More</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-    </section> -->
+        </div>
+    </section>
+    <!-- Shipments End -->
     
     
     <!-- Cards -->
@@ -358,56 +380,14 @@
             </div>
         </div>
     </section>
+    <!-- Cards End -->
 
-    <!-- Shipments -->
-    <section class="p-1 bg-light" id="shipments">
-        <div class="container">
-            <div class="row text-center gy-1 ">
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5 zoom">
-                        <div class="card-body text-center">
-                            <div class="h1 mb-3">
-                                <i class="bi bi-envelope"></i>
-                            </div>
-                            <h3 class="card-title mb-3">Letters</h3>
-                            <p class="card-text">Tracking Foreign Shipments  - Letters</p>
-                            <a href="#letters" class="btn btn-poland-red rounded-5 stretched-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5 zoom">
-                        <div class="card-body text-center">
-                            <div class="h1 mb-3">
-                                <i class="bi bi-box"></i>
-                            </div>
-                            <h3 class="card-title mb-3">Parcels</h3>
-                            <p class="card-text">Tracking Foreign Shipments - parcels</p>
-                            <a href="#parcels" class="btn btn-poland-red rounded-5 stretched-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5 zoom">
-                        <div class="card-body text-center">
-                            <div class="h1 mb-3">
-                                <i class="bi bi-truck"></i>
-                            </div>
-                            <h3 class="card-title mb-3">EMS</h3>
-                            <p class="card-text">Tracking Courier Shipments</p>
-                            <a href="#courier" class="btn btn-poland-red rounded-5 stretched-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-     <!-- Frequently Asked Questions -->
+    <!-- Frequently Asked Questions -->
     <section class="p-1 bg-light" id="questions">
         <div class="container">
             <div class="accordion" id="accordion-faq">
-                <h1 class="text-center p-5 pt-lg-5">Frequently Asked Questions</h1>
+                <h2 class="text-center display-5 fw-bold lh-1 mb-3 p-5 pt-lg-5">Frequently Asked Questions</h2>
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-one">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -485,11 +465,8 @@
             </div>
         </div>
     </section>
+    <!-- Frequently Asked Questions End-->
 
-    <!-- Pickup at Point Banner -->
-    <section id="banner" class="bg-light p-5">
-
-    </section>
 
     <!-- Footer -->
     <footer class="p-1 bg-light text-center position-relative">
@@ -497,6 +474,8 @@
            <p class="">Copyright &copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> Eugene Zuev</p> 
         </div>
     </footer>
+    <!-- Footer End -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
