@@ -2,20 +2,19 @@
 
 ## About
 
-[About design and project](https://zhekazuev.github.io/emonitoring-poczta-polska/about)
+[About project](https://zhekazuev.github.io/emonitoring-poczta-polska/about)
 
-[Redisign for emonitoring.poczta-polska.pl](https://zhekazuev.github.io/emonitoring-poczta-polska/)
+[New Design](https://zhekazuev.github.io/emonitoring-poczta-polska/)
 
 [Working web application on Heroku](https://emonitoring-poczta-polska.herokuapp.com)
 
-[Example of search](https://emonitoring-poczta-polska.herokuapp.com/search?number=12345)
-
 Curent Stack:
-- Python - Flask
+- Python - Flask, Gunicorn, Requests
 - API Poland Post
 - HTML/CSS - Bootstrap and SCSS
 - Docker
 - GitHub Actions
+- Heroku
 
 ## Pallete and Design:
 
@@ -23,6 +22,16 @@ Curent Stack:
 <img src="./references/adobecolor_color_post_simle.jpeg" alt="Pallete"/>
 
 ## How it works:
+
+- Flask - Middleware
+- Gunicorn - WSGI
+- Requests - Requesting data from API
+- Docker - Containerization
+- GitHub Actions - CI/CD
+- Heroku - Cloud Platform
+
+
+### API Poland Post
 
 Request
 ```bash
