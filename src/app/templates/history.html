@@ -21,76 +21,80 @@
                         {% if event.postOffice %}
                             <td class="text-start">
                                 {% if event.postOffice.description is defined %}
-                                    <a href="#" class="link-danger" data-bs-toggle="modal" data-bs-target="#post-office-{{ event.code }}">
-                                        {{ event.postOffice.name }}
-                                    </a>
-                                    <div class="modal fade" id="post-office-{{ event.code }}" tabindex="-1" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5">                                                                            
-                                                <div class="card-body text-center">
-                                                    <div class="table-responsive">
-                                                        <h4 class="pt-3 pb-3">About Post Office</h4>
-                                                        <table class="table align-items-center mb-0 table-hover table-borderless">
-                                                            <tbody>
-                                                                {% if event.postOffice.description.zipCode %}
-                                                                    <tr>
-                                                                        <td class="text-start">Zip Code:</td>
-                                                                        <td class="text-start"> 
-                                                                            {{ event.postOffice.description.zipCode }} 
-                                                                        </td>
-                                                                    </tr>
-                                                                {% endif %}
-                                                                {% if event.postOffice.description.city %}
-                                                                    <tr>
-                                                                        <td class="text-start">City:</td>
-                                                                        <td class="text-start"> 
-                                                                            {{ event.postOffice.description.city }}
-                                                                        </td>
-                                                                    </tr>
-                                                                {% endif %}
-                                                                {% if event.postOffice.description.street %}
-                                                                    <tr>
-                                                                        <td class="text-start">Street:</td>
-                                                                        <td class="text-start">
-                                                                            {{ event.postOffice.description.street }} 
-                                                                            {% if event.postOffice.description.houseNumber %}
-                                                                                {{ event.postOffice.description.houseNumber }}
-                                                                            {% endif %}
-                                                                        </td>
-                                                                    </tr>
-                                                                {% endif %}
-                                                                {% if event.postOffice.description.openingHours %}
-                                                                    {% if event.postOffice.description.openingHours.businessDays %}
+                                    {% if event.postOffice.description.city is defined %}
+                                        <a href="#" class="link-danger" data-bs-toggle="modal" data-bs-target="#post-office-{{ event.id }} ">
+                                            {{ event.postOffice.name }}
+                                        </a>
+                                        <div class="modal fade" id="post-office-{{ event.id }}" tabindex="-1" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5">                                                                            
+                                                    <div class="card-body text-center">
+                                                        <div class="table-responsive">
+                                                            <h4 class="pt-3 pb-3">About Post Office</h4>
+                                                            <table class="table align-items-center mb-0 table-hover table-borderless">
+                                                                <tbody>
+                                                                    {% if event.postOffice.description.zipCode %}
                                                                         <tr>
-                                                                            <td class="text-start">Business Days</td>
+                                                                            <td class="text-start">Zip Code:</td>
+                                                                            <td class="text-start"> 
+                                                                                {{ event.postOffice.description.zipCode }} 
+                                                                            </td>
+                                                                        </tr>
+                                                                    {% endif %}
+                                                                    {% if event.postOffice.description.city %}
+                                                                        <tr>
+                                                                            <td class="text-start">City:</td>
+                                                                            <td class="text-start"> 
+                                                                                {{ event.postOffice.description.city }}
+                                                                            </td>
+                                                                        </tr>
+                                                                    {% endif %}
+                                                                    {% if event.postOffice.description.street %}
+                                                                        <tr>
+                                                                            <td class="text-start">Street:</td>
                                                                             <td class="text-start">
-                                                                                {% for hours in event.postOffice.description.openingHours.businessDays %}
-                                                                                    {{ hours.from }} - {{ hours.to }} <br>
+                                                                                {{ event.postOffice.description.street }} 
+                                                                                {% if event.postOffice.description.houseNumber %}
+                                                                                    {{ event.postOffice.description.houseNumber }}
+                                                                                {% endif %}
+                                                                            </td>
+                                                                        </tr>
+                                                                    {% endif %}
+                                                                    {% if event.postOffice.description.openingHours %}
+                                                                        {% if event.postOffice.description.openingHours.businessDays %}
+                                                                            <tr>
+                                                                                <td class="text-start">Business Days</td>
+                                                                                <td class="text-start">
+                                                                                    {% for hours in event.postOffice.description.openingHours.businessDays %}
+                                                                                        {{ hours.from }} - {{ hours.to }} <br>
+                                                                                    {% endfor %}
+                                                                                </td>
+                                                                            </tr>
+                                                                        {% endif %}
+                                                                    {% endif %}
+                                                                    {% if event.postOffice.description.openingHours|length > 1 %}
+                                                                        <tr>
+                                                                            <td class="text-start">Opening Hours</td>
+                                                                            <td class="text-start">
+                                                                                {% for day, hours in event.postOffice.description.openingHours.items() %}
+                                                                                    {{ day|title }}:    
+                                                                                    {% for hour in hours %}
+                                                                                        {{ hour.from }} - {{ hour.to }} <br>
+                                                                                    {% endfor %}
                                                                                 {% endfor %}
                                                                             </td>
                                                                         </tr>
                                                                     {% endif %}
-                                                                {% endif %}
-                                                                {% if event.postOffice.description.openingHours|length > 1 %}
-                                                                    <tr>
-                                                                        <td class="text-start">Opening Hours</td>
-                                                                        <td class="text-start">
-                                                                            {% for day, hours in event.postOffice.description.openingHours.items() %}
-                                                                                {{ day|title }}:    
-                                                                                {% for hour in hours %}
-                                                                                    {{ hour.from }} - {{ hour.to }} <br>
-                                                                                {% endfor %}
-                                                                            {% endfor %}
-                                                                        </td>
-                                                                    </tr>
-                                                                {% endif %}
-                                                            </tbody>
-                                                        </table>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    {% else %}
+                                        {{ event.postOffice.name }}
+                                    {% endif %}
                                 {% else %}
                                     {{ event.postOffice.name }}
                                 {% endif %}
