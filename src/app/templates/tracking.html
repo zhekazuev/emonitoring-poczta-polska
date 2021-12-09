@@ -1,0 +1,60 @@
+<!-- Parcel Tracking -->
+<section class="bg-light py-5" id="tracking">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <div class="card bg-light text-dark shadow p-1 bg-white rounded-5">
+                    <div class="card-body text-center">
+                        {% if data.mailInfo.finished == True %}
+                            <div class="h1 mb-3" style="color:#039313;">
+                                <i class="bi bi-check-circle"></i>
+                            </div>
+                            <h2 class="card-title mb-3">
+                                {{ data.mailInfo.events[-1].name }} <br>
+                                {{ data.mailInfo.events[-1].time }}
+                            </h2>
+                        {% else %}
+                            <div class="h1 mb-3" style="color:#d31c14;">
+                                <i class="bi bi-dash-circle"></i>
+                            </div>
+                            <h2 class="card-title mb-3">
+                                {{ data.mailInfo.events[-1].name }} <br>
+                                {{ data.mailInfo.events[-1].time }}
+                            </h2>
+                        {% endif %}
+                       
+                        <!-- <div class="h1 mb-3" style="color: #d31c14;">
+                            <i class="bi bi-dash-circle"></i>
+                        </div>
+                        <div class="h1 mb-3" style="color: #d6715a;">
+                            <i class="bi bi-exclamation-circle"></i>
+                        </div>
+                        <div class="h1 mb-3" style="color: #d31c14;">
+                            <i class="bi bi-x-circle"></i>
+                        </div>
+                        <div class="h1 mb-3" style="color: #d6715a;">
+                            <i class="bi bi-hourglass-split"></i>
+                        </div> -->
+                        <p>Signed for by: <h3> {{ data.number }} </h3></p>
+                        <div>
+                            <p class="">
+                                <!-- <button class="btn btn-poland-red rounded-5 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-about-package" aria-expanded="false" aria-controls="collapseExample">
+                                    About package
+                                </button> -->
+                                <button class="btn btn-poland-red rounded-5 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-timiline" aria-expanded="false" aria-controls="collapseExample">
+                                    Show history
+                                </button>
+                            </p>
+                            <h4>About Package</h4>
+                            <div class="row justify-content-md-center gy-1">
+                                {% include "about_package.html" %}
+                                {% include "history.html" %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Parcel Tracking End -->

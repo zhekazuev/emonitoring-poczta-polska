@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block tracking %}
+    {% if data %}
+        {% include "tracking.html" %}
+    {% else %}
+        {% include "tracking_error.html" %}
+    {% endif %}
+{% endblock tracking %}

@@ -1,0 +1,208 @@
+<div class="col-12 center py-3">
+    <div class="table-responsive">
+        <table class="table align-items-center mb-0 table-hover table-borderless rounded-5">
+            <tbody>
+                {% if data.mailInfo.dispatchDate %}
+                    <tr style="border-radius: 10px">
+                        <td class="text-start"><strong>Dispatch Date:</strong></td>
+                        <td class="text-start"> {{ data.mailInfo.dispatchDate }} </td>
+                    </tr>
+                {% endif %}
+                {% if data.mailInfo.typeOfMailName %}
+                    <tr>
+                        <td class="text-start"><strong>Package type:</strong></td>
+                        <td class="text-start"> {{ data.mailInfo.typeOfMailName|title }} </td>
+                    </tr>
+                {% endif %}
+                {% if data.mailInfo.dispatchCountryName %}
+                    <tr>
+                        <td class="text-start"><strong>Dispatch country:</strong></td>
+                        <td class="text-start"> {{ data.mailInfo.dispatchCountryName }} </td>
+                    </tr>
+                {% endif %}
+                {% if data.mailInfo.dispatchPostOffice %}
+                    <tr>
+                        <td class="text-start"><strong>Dispatch Post Office:</strong></td>
+
+                        <td class="text-start"> 
+                            <a href="#" class="link-danger" data-bs-toggle="modal" data-bs-target="#dispatch-post-office">
+                                {{ data.mailInfo.dispatchPostOffice.name }}
+                            </a>
+                            <div class="modal fade" id="dispatch-post-office" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5">                                                                            
+                                        <div class="card-body text-center">
+                                            <div class="table-responsive">
+                                                <h4 class="pt-3 pb-3">About Post Office</h4>
+                                                <table class="table align-items-center mb-0 table-hover table-borderless">
+                                                    <tbody>
+                                                        {% if data.mailInfo.dispatchPostOffice.description.zipCode %}
+                                                            <tr>
+                                                                <td class="text-start">Zip Code:</td>
+                                                                <td class="text-start"> 
+                                                                    {{ data.mailInfo.dispatchPostOffice.description.zipCode }} 
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                        {% if data.mailInfo.dispatchPostOffice.description.city %}
+                                                            <tr>
+                                                                <td class="text-start">City:</td>
+                                                                <td class="text-start"> 
+                                                                    {{ data.mailInfo.dispatchPostOffice.description.city }}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                        {% if data.mailInfo.dispatchPostOffice.description.street %}
+                                                            <tr>
+                                                                <td class="text-start">Street:</td>
+                                                                <td class="text-start">
+                                                                    {{ data.mailInfo.dispatchPostOffice.description.street }} 
+                                                                    {% if data.mailInfo.dispatchPostOffice.description.houseNumber %}
+                                                                        {{ data.mailInfo.dispatchPostOffice.description.houseNumber }}
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                        {% if data.mailInfo.dispatchPostOffice.description.openingHours.businessDays %}
+                                                            <tr>
+                                                                <td class="text-start">Business Days</td>
+                                                                <td class="text-start">
+                                                                    {% for hours in data.mailInfo.dispatchPostOffice.description.openingHours.businessDays %}
+                                                                        {{ hours.from }} - {{ hours.to }} <br>
+                                                                    {% endfor %}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                        {% if data.mailInfo.dispatchPostOffice.description.openingHours|length > 1 %}
+                                                            <tr>
+                                                                <td class="text-start">Opening Hours</td>
+                                                                <td class="text-start">
+                                                                    {% for day, hours in data.mailInfo.dispatchPostOffice.description.openingHours.items() %}
+                                                                        {{ day|title }}:    
+                                                                        {% for hour in hours %}
+                                                                            {{ hour.from }} - {{ hour.to }} <br>
+                                                                        {% endfor %}
+                                                                    {% endfor %}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                    </tbody>           
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if data.mailInfo.recipientCountryName %}
+                    <tr>
+                        <td class="text-start"><strong>Country of destination:</strong></td>
+                        <td class="text-start"> {{ data.mailInfo.recipientCountryName }} </td>
+                    </tr>
+                {% endif %}
+                {% if data.mailInfo.recipientPostOffice %}
+                    <tr>
+                        <td class="text-start"><strong>Recipient Post Office:</strong></td>
+
+                        <td class="text-start"> 
+                            <a href="#" class="link-danger" data-bs-toggle="modal" data-bs-target="#recipient-post-office">
+                                {{ data.mailInfo.recipientPostOffice.name }}
+                            </a>
+                            <div class="modal fade" id="recipient-post-office" tabindex="-1" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content card bg-light text-dark shadow p-1 mb-5 bg-white rounded-5">                                                                            
+                                        <div class="card-body text-center">
+                                            <div class="table-responsive">
+                                                <h4 class="pt-3 pb-3">About Post Office</h4>
+                                                <table class="table align-items-center mb-0 table-hover table-borderless">
+                                                    <tbody>
+                                                        {% if data.mailInfo.recipientPostOffice.description.zipCode %}
+                                                            <tr>
+                                                                <td class="text-start">Zip Code:</td>
+                                                                <td class="text-start"> 
+                                                                    {{ data.mailInfo.recipientPostOffice.description.zipCode }} 
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                        {% if data.mailInfo.recipientPostOffice.description.city %}
+                                                            <tr>
+                                                                <td class="text-start">City:</td>
+                                                                <td class="text-start"> 
+                                                                    {{ data.mailInfo.recipientPostOffice.description.city  }}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                        {% if data.mailInfo.recipientPostOffice.description.street %}
+                                                            <tr>
+                                                                <td class="text-start">Street:</td>
+                                                                <td class="text-start">
+                                                                    {{ data.mailInfo.recipientPostOffice.description.street }} 
+                                                                    {% if data.mailInfo.recipientPostOffice.description.houseNumber %}
+                                                                        {{ data.mailInfo.recipientPostOffice.description.houseNumber }}
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                        {% if data.mailInfo.recipientPostOffice.description.openingHours.businessDays %}
+                                                            <tr>
+                                                                <td class="text-start">Business Days</td>
+                                                                <td class="text-start">
+                                                                    {% for hours in data.mailInfo.recipientPostOffice.description.openingHours.businessDays %}
+                                                                        {{ hours.from }} - {{ hours.to }} <br>
+                                                                    {% endfor %}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                        {% if data.mailInfo.recipientPostOffice.description.openingHours|length > 1 %}
+                                                            <tr>
+                                                                <td class="text-start">Opening Hours</td>
+                                                                <td class="text-start">
+                                                                    {% for day, hours in data.mailInfo.recipientPostOffice.description.openingHours.items() %}
+                                                                        {{ day|title }}:    
+                                                                        {% for hour in hours %}
+                                                                            {{ hour.from }} - {{ hour.to }} <br>
+                                                                        {% endfor %}
+                                                                    {% endfor %}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                {% endif %}
+                {% if data.mailInfo.typeOfMailCode %}
+                    <tr>
+                        <td class="text-start"><strong>Mail Code Type:</strong></td>
+                        <td class="text-start"> {{ data.mailInfo.typeOfMailCode }} </td>
+                    </tr>
+                {% endif %}
+                {% if data.mailInfo.weight %}
+                    <tr>
+                        <td class="text-start"><strong>Weight:</strong></td>
+                        <td class="text-start"> {{ data.mailInfo.weight }} kg</td>
+                    </tr>
+                {% endif %}
+                {% if data.mailInfo.gauge %}
+                    <tr>
+                        <td class="text-start"><strong>Gauge:</strong></td>
+                        <td class="text-start"> {{ data.mailInfo.gauge }} </td>
+                    </tr>
+                {% endif %}
+                {% if data.mailInfo.deliveryMode %}
+                    <tr>
+                        <td class="text-start"><strong>Delivery Mode:</strong></td>
+                        <td class="text-start"> {{ data.mailInfo.deliveryMode }} </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
