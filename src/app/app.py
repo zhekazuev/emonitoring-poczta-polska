@@ -1,5 +1,6 @@
 import os
-from flask import Flask, render_template, request, jsonify
+import datetime
+from flask import Flask, render_template, request
 import requests
 
 # create Flask-object
@@ -57,7 +58,15 @@ def add_indexes_to_events(data):
             for index, event in enumerate(reversed(data.get("mailInfo").get("events"))):
                 event["id"] = index        
     return data
+    
+def change_date_format(data):
+    if data.get("mailInfo").get("dispatchDate"):
+        data["mailInfo"]["dispatchDate"] = data.get("mailInfo").get("dispatchDate").replace('T',' ')
 
+    for event in data.get("mailInfo").get("events"):
+        if event.get("time"):
+            event["time"] = event.get("time").replace('T',' ')
+    return data
 
 @app.route('/')
 def index():
@@ -94,6 +103,7 @@ def search():
         data = None
 
     data = add_indexes_to_events(data)
+    data = change_date_format(data)
 
     return render_template('results.html', data=data)
 
