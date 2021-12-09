@@ -50,6 +50,15 @@ def check_mailex(number, headers, language="EN", add_post_office_info="true"):
     data = response.json()
     return data
 
+
+def add_indexes_to_events(data):
+    if data.get("mailInfo"):
+        if data.get("mailInfo").get("events"):
+            for index, event in enumerate(reversed(data.get("mailInfo").get("events"))):
+                event["id"] = index        
+    return data
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -83,6 +92,8 @@ def search():
             data = None
     else:
         data = None
+
+    data = add_indexes_to_events(data)
 
     return render_template('results.html', data=data)
 
