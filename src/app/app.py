@@ -99,11 +99,11 @@ def search():
         # check status of parcel - if mailStatus == -1 - parcel doesn't exist, else - exist
         if data.get('mailStatus') == -1:
             data = None
+        else:
+            data = add_indexes_to_events(data)
+            data = change_date_format(data)
     else:
         data = None
-
-    data = add_indexes_to_events(data)
-    data = change_date_format(data)
 
     return render_template('results.html', data=data)
 
