@@ -4,8 +4,11 @@
         <div class="d-md-flex justify-content-between align-items-center">
             <h2 class="m-1 mb-md-0">Check the status of your shipment</h2>
             <form class="search-input input-group" action="/search" method="get">
-                <!-- <label for="number"></label> -->
-                <input type="search" pattern="[^\s]*" name="number" id="number" class="form-control rounded-5" placeholder="CP23416576PL" aria-label="Package number" aria-describedby="button-number">
+                <label class="form-label" for="number"></label>
+                <input type="search" required name="number" id="number" class="form-control rounded-5" placeholder="CP23416576PL" aria-label="Package number" aria-describedby="button-number">
+                <div class="valid-tooltip">
+                    Good!
+                </div>
                 <button class="btn btn-dark btn-lg rounded-5" type="submit" id="button-number">Enter</button>
             </form>
         </div>
