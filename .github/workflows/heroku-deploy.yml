@@ -31,15 +31,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-        # Build Docker image
-      - name: Docker build
+      - name: Log in to Heroku Container Registry
         run: docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
-
-      # Push the Docker image to Heroku Container Registry
-      - name: Publish
-        run: |
-          heroku container:push web -a $APP_NAME
-          heroku container:release web -a $APP_NAME
+    
+      - name: Build the image and push to Container Registry
+        run: heroku container:push web -a $APP_NAME
+      
+      - name: Release the image to your app
+        run: heroku container:release web -a $APP_NAME
 
       # - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       #   with:
