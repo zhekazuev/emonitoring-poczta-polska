@@ -23,7 +23,6 @@ env:
   HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
   APP_NAME: ${{ 'emonitoring-poczta-polska' }}
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -32,7 +31,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Log in to Heroku Container Registry
-        run: docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
+        env: 
+          HEROKU_API_KEY: $HEROKU_API_KEY
+        run: heroku container:login 
     
       - name: Build the image and push to Container Registry
         run: heroku container:push web -a $APP_NAME
