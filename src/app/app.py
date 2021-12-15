@@ -32,6 +32,7 @@ def check_mailex(number, headers, language="EN", add_post_office_info="true"):
     url = 'https://uss.poczta-polska.pl/uss/v1.0/tracking/checkmailex'
     
     # standard api key from poland post site
+    # API_KEY = os.getenv("POLAND_POST_API_KEY")
     API_KEY = "BiGwVG2XHvXY+kPwJVPA8gnKchOFsyy39Thkyb1wAiWcKLQ1ICyLiCr"\
         "xj1+vVGC+kQk3k0b74qkmt5/qVIzo7lTfXhfgJ72Iyzz05wH2XZI6AgXVDciX"\
         "7G2jLCdoOEM6XegPsMJChiouWS2RZuf3eOXpK5RPl8Sy4pWj+b07MLg=.Mjg0"\
