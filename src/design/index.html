@@ -9,14 +9,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link rel="stylesheet" rel="preload" href="css/style.css" as="style">
     <title>Poland Post Tracking</title>
-    <link rel="shortcut icon" type="image/jpg" href="img/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md bg-light">
         <div class="container navbar-light animate__fadeInDown">
             <a href="#home" class="navbar-brand">
-                <img src="img/logo.svg" alt="Poland Post Logo" width="200" height="44" class="rounded-5">
+                <picture>
+                    <source srcset="img/logo_compressed.webp" type="image/webp">
+                    <source srcset="img/logo.svg" type="image/svg">
+                    <img src="img/logo.svg" alt="Poland Post Logo" width="200" height="44" class="rounded-5">
+                </picture>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-label="Justify">
                 <span class="navbar-toggler-icon"></span>
@@ -391,6 +395,7 @@
                 <div class="col-md">
                     <picture>
                         <source srcset="img/hero.webp" type="image/webp">
+                        <source srcset="img/hero.jpg" type="image/jpeg">
                         <img src="img/hero.jpg" class="img-fluid rounded-5 shadow-lg" alt="hero">
                     </picture>
                 </div>
