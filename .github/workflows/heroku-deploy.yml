@@ -6,6 +6,7 @@ on:
       - main
   push:	
     paths:
+      - '.github/workflows/heroku-deploy.yml'
       - 'src/scss/**'
       - 'src/app/**'
       - 'src/design/img/**'
